@@ -1,0 +1,31 @@
+<div class="input" [formGroup]="InputForm">
+    <mat-form-field
+      appearance="outline"
+      class="input__wrapper"
+      [hideRequiredMarker]="'*'"
+    >
+      <mat-label> {{ placeholder }} </mat-label>
+      <input
+        matInput
+        [placeholder]="placeholder"
+        [formControlName]="type"
+        [type]="!hide && type === 'password' ? 'password' : 'text'"
+      />
+      <button
+        *ngIf="type === 'password'"
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide Password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon
+          [ngClass]="{
+            input__icon: hide
+          }"
+          >visibility</mat-icon
+        >
+      </button>
+    </mat-form-field>
+  </div>
+  
