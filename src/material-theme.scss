@@ -1,0 +1,20 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$taxi-theme-primary: mat.define-palette(mat.$orange-palette, A100);
+$taxi-theme-accent: mat.define-palette(mat.$light-blue-palette, 500); //100 for select
+$taxi-theme-warn: mat.define-palette(mat.$pink-palette, 500);
+
+$taxi-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $taxi-theme-primary,
+      accent: $taxi-theme-accent,
+      warn: $taxi-theme-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($taxi-theme);
+
