@@ -3,7 +3,7 @@ $main-active-color: #00a1e5;
 .input__wrapper {
   width: 400px;
 
-  .input__icon {
+  .input__icon_show {
     color: $main-active-color;
   }
 }
@@ -13,7 +13,7 @@ $main-active-color: #00a1e5;
     color: black;
   }
   .mat-form-field-label {
-    color: black;
+    color: #6A6A6A;
     font-size: 15px;
   }
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {

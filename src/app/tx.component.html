@@ -1,0 +1,17 @@
+<form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
+  <tx-form-input
+    placeholder="Email"
+    type="email"
+    [formControl]="$any(demonstrationForm.controls)['email']"
+  ></tx-form-input>
+  <tx-form-input
+    placeholder="Password"
+    type="password"
+    [formControl]="$any(demonstrationForm.controls)['password']"
+  ></tx-form-input>
+  <tx-form-input
+    placeholder="FirstName"
+    [formControl]="$any(demonstrationForm.controls)['name']"
+  ></tx-form-input>
+  <button type="submit">click</button>
+</form>
