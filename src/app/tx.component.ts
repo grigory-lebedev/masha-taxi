@@ -13,6 +13,7 @@ export class AppComponent {
     email: new FormControl(''),
     password: new FormControl(''),
     name: new FormControl(''),
+    role: new FormControl(''),
     isLoggedIn: new FormControl(false),
   });
 

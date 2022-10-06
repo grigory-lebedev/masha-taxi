@@ -1,4 +1,4 @@
-@import 'material-theme.scss';
+@import "material-theme.scss";
 
 html,
 body {
@@ -7,6 +7,29 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-select {
+  min-width: 370px !important;
+  top: 295px !important;
+  left: 65px !important;
+  transform: translateX(-16px) translateY(-10px) !important;
+
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: black;
+  }
+
+  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: none;
+  }
+
+  .mat-option.mat-active {
+    background: none;
+  }
+
+  .mat-option:hover{
+    background-color: #C7F1FF;
+  }
 }
 
 @font-face {
