@@ -8,12 +8,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormInputComponent } from './shared/form-controls/form-input/form-input.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormCheckboxComponent } from './shared/form-controls/form-checkbox/form-checkbox.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormInputComponent
-  ],
+  declarations: [AppComponent, FormInputComponent, FormCheckboxComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -21,9 +20,10 @@ import { FormInputComponent } from './shared/form-controls/form-input/form-input
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    ReactiveFormsModule
+    MatCheckboxModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

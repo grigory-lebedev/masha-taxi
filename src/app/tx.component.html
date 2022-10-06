@@ -1,17 +1,28 @@
-<form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
+<form
+  class="form"
+  name="signInForm"
+  [formGroup]="demonstrationForm"
+  (ngSubmit)="onSignIn()"
+>
   <tx-form-input
     placeholder="Email"
     type="email"
-    [formControl]="$any(demonstrationForm.controls)['email']"
+    formControlName="email"
   ></tx-form-input>
   <tx-form-input
     placeholder="Password"
     type="password"
-    [formControl]="$any(demonstrationForm.controls)['password']"
+    formControlName="password"
   ></tx-form-input>
   <tx-form-input
     placeholder="FirstName"
-    [formControl]="$any(demonstrationForm.controls)['name']"
+    formControlName="name"
   ></tx-form-input>
+  <tx-form-checkbox
+    text="Keep me logged in"
+    formControlName="isLoggedIn"
+  ></tx-form-checkbox>
   <button mat-raised-button color="accent" type="submit">BUTTON</button>
 </form>
+
+<!-- [formControl]="$any(demonstrationForm.controls)['email']" -->
