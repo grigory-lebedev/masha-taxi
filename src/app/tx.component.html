@@ -4,7 +4,9 @@
   <tx-form-input placeholder="FirstName" formControlName="name"></tx-form-input>
   <tx-form-select placeholder="Role" formControlName="role" [items]="selectItems"></tx-form-select>
   <tx-form-checkbox text="Keep me logged in" formControlName="isLoggedIn"></tx-form-checkbox>
-  <button mat-raised-button color="accent" type="submit">BUTTON</button>
+  <tx-form-button formControlName="button" type="submit" text="BUTTON" [disabled]=isFormInvalid()></tx-form-button>
 </form>
 
+
+<!-- <button mat-raised-button type="submit" color="accent" [disabled]="isFormInvalid()">BUTTON</button> -->
 <!-- [formControl]="$any(demonstrationForm.controls)['email']" -->

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'tx-root',
@@ -10,18 +10,26 @@ export class AppComponent {
   title = 'masha-taxi';
   selectItems = [
     { id: 1, value: 'Client' },
-    { id: 2, value: 'Driver' }
+    { id: 2, value: 'Driver' },
   ];
 
   public demonstrationForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-    name: new FormControl(''),
-    role: new FormControl(''),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
+    role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl(false),
+    button: new FormControl({value: '', disabled: true}),
   });
 
+  isFormInvalid(): boolean{
+    return !this.demonstrationForm.valid;
+  }
+
   onSignIn(): void {
-    console.log(this.demonstrationForm.controls['role'].value);
+    //console.log((this.demonstrationForm.controls)['button']);
+    if (this.isFormInvalid()) {
+      return;
+    }
   }
 }
