@@ -26,7 +26,8 @@ import { MAT_SELECT_CONFIG } from '@angular/material/select';
 })
 export class FormSelectComponent implements ControlValueAccessor {
   formControl: FormControl = new FormControl({}, [Validators.required]);
-  @Input() placeholder: string = '';
+  @Input() items: any = [];
+  @Input() placeholder: string = "";
 
   isDisabled: boolean = false;
 

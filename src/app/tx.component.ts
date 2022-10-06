@@ -8,6 +8,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'masha-taxi';
+  selectItems = [
+    { id: 1, value: 'Client' },
+    { id: 2, value: 'Driver' }
+  ];
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -18,9 +22,6 @@ export class AppComponent {
   });
 
   onSignIn(): void {
-    console.log(this.demonstrationForm.controls['email'].value);
-    console.log(this.demonstrationForm.controls['password'].value);
-    console.log(this.demonstrationForm.controls['name'].value);
-    console.log(this.demonstrationForm.controls['isLoggedIn'].value);
+    console.log(this.demonstrationForm.controls['role'].value);
   }
 }
