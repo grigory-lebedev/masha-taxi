@@ -15,7 +15,7 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    password: new FormControl({value: '', disabled: false}, Validators.required),
     name: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl(false),
@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   onSignIn(): void {
-    //console.log((this.demonstrationForm.controls)['button']);
+    console.log((this.demonstrationForm.controls)['password']);
     if (this.isFormInvalid()) {
       return;
     }

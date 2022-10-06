@@ -3,11 +3,6 @@ $main-active-color: #00a1e5;
 .input__wrapper {
   width: 400px;
 
-  input[type="password"]::placeholder {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-size: 14px;
-  }
-
   .input__icon_show {
     color: $main-active-color;
   }
@@ -20,6 +15,10 @@ $main-active-color: #00a1e5;
   .mat-form-field-label {
     color: #6a6a6a;
     font-size: 15px;
+
+    :focus{
+      color: transparent;
+    }
   }
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
     color: $main-active-color;

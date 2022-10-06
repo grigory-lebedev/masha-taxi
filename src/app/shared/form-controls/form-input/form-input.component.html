@@ -5,10 +5,10 @@
     [hideRequiredMarker]="'*'"
   >
     <mat-label> {{ placeholder }} </mat-label>
-    <input
+    <ng-content *ngIf="!isPasswordVisible"></ng-content>
+    <input *ngIf="isPasswordVisible"
       matInput
-      [formControl]="formControl"
-      [placeholder]="placeholder"
+      [value]="inputValue"
       [type]="getInputType()"
     />
     <button

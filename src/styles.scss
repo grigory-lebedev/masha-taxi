@@ -9,6 +9,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+input[type="password"]::placeholder {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
 .custom-select {
   min-width: 370px !important;
   //top: 420px !important;

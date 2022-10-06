@@ -1,10 +1,14 @@
-import { Component, Input, forwardRef } from '@angular/core';
 import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  Validators,
-} from '@angular/forms';
+  Component,
+  ContentChild,
+  ViewChild,
+  OnInit,
+  AfterViewChecked,
+} from '@angular/core';
+import {
+  MatFormField,
+  MatFormFieldControl,
+} from '@angular/material/form-field';
 
 enum InputType {
   password = 'password',
@@ -16,48 +20,35 @@ enum InputType {
   selector: 'tx-form-input',
   templateUrl: './form-input.component.html',
   styleUrls: ['./form-input.component.scss'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormInputComponent),
-      multi: true,
-    },
-  ],
 })
-export class FormInputComponent implements ControlValueAccessor {
-  formControl: FormControl = new FormControl({}, [Validators.required]);
-  @Input() type: string = '';
-  @Input() placeholder: string = '';
+export class FormInputComponent implements OnInit, AfterViewChecked {
+  @ContentChild(MatFormFieldControl, { static: true }) input!: MatFormFieldControl<HTMLInputElement>;
+  @ViewChild(MatFormField, { static: true }) matFormField!: MatFormField;
 
-  isPasswordVisible: boolean = false;
-  isDisabled: boolean = false;
+  public placeholder: string = '';
+  public isPasswordVisible: boolean = false;
+  public inputType: string = InputType.text;
+  public inputValue: string = '';
 
-  onTouched = (): void => {};
+  ngOnInit() {
+    const htmlInput = (this.input as any)['_elementRef'].nativeElement;
+    this.placeholder = htmlInput.getAttribute('placeholder');
+    this.inputType = htmlInput.getAttribute('type');
+    this.matFormField._control = this.input; // !!!
+  }
 
-  writeValue(obj: string): void {
-    this.formControl.setValue(obj);
-    if (this.type === InputType.email) {
-      this.formControl.addValidators(Validators.email);
-    }
-  }
-  registerOnChange(fn: any): void {
-    this.formControl.valueChanges.subscribe(fn);
-  }
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-  setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+  ngAfterViewChecked() {
+    this.inputValue = this.input.ngControl?.value;
   }
 
   getInputType(): InputType {
-    return !this.isPasswordVisible && this.type === InputType.password
+    return !this.isPasswordVisible && this.inputType === InputType.password
       ? InputType.password
       : InputType.text;
   }
 
   isPasswordType(): boolean {
-    return this.type === InputType.password;
+    return this.inputType === InputType.password;
   }
 
   togglePasswordVisibility(): void {
