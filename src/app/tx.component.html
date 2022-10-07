@@ -12,7 +12,7 @@
   <tx-form-select placeholder="Role" formControlName="role" [items]="selectItems"></tx-form-select>
   <tx-form-checkbox text="Keep me logged in" formControlName="isLoggedIn"></tx-form-checkbox>
 
-  <tx-form-button formControlName="button" type="submit" text="BUTTON" [disabled]=isFormInvalid()></tx-form-button>
+  <tx-form-button type="submit" text="BUTTON" [disabled]=!isFormValid()></tx-form-button>
 </form>
 
 
