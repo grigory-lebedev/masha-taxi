@@ -12,13 +12,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { FormButtonComponent } from './shared/form-controls/form-button/form-button.component';
 import { RoleSelectComponent } from './sign-up/component/role-select/role-select.component';
+import { PageWrapperComponent } from './shared/general-components/page-wrapper/page-wrapper';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormInputComponent,
     RoleSelectComponent,
-    FormButtonComponent
+    FormButtonComponent,
+    PageWrapperComponent
   ],
   imports: [
     BrowserModule,

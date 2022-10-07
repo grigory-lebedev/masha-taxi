@@ -8,3 +8,9 @@
     color: v.$accent;
   }
 }
+
+:host::ng-deep {
+  .mat-form-field:hover .mat-form-field-label {
+    // label!
+  }
+}
