@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 .custom-select {
   min-width: 370px !important;
   //top: 420px !important;
@@ -17,6 +19,6 @@
   }
 
   .mat-option:hover {
-    background-color: #c7f1ff;
+    background-color: v.$accent-light;
   }
 }

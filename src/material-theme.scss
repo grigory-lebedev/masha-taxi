@@ -1,10 +1,45 @@
 @use "@angular/material" as mat;
+@use './app/shared/scss/material-overrides/variables' as v;
 
 @include mat.core();
 
-$taxi-theme-primary: mat.define-palette(mat.$orange-palette, A100);
-$taxi-theme-accent: mat.define-palette(mat.$light-blue-palette, 500); //100 for select
-$taxi-theme-warn: mat.define-palette(mat.$pink-palette, 500);
+$primary-color: (
+  100: v.$primary,
+  500: v.$primary,
+  700: v.$primary,
+  contrast: (
+    100: #ffffff,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$accent-color: (
+  100: v.$accent-light,
+  500: v.$accent,
+  700: v.$accent,
+  contrast: (
+    100: #ffffff,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$warn-color: (
+  100: v.$warn-light,
+  500: v.$warn,
+  700: v.$warn,
+  contrast: (
+    100: #ffffff,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+
+$taxi-theme-primary: mat.define-palette($primary-color);
+$taxi-theme-accent: mat.define-palette($accent-color); 
+$taxi-theme-warn: mat.define-palette($warn-color);
 
 $taxi-theme: mat.define-light-theme(
   (

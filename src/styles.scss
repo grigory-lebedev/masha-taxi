@@ -1,5 +1,6 @@
 @import "material-theme.scss";
 @import "./app/shared/scss/material-overrides/custom-select.scss";
+@import "./app/shared/scss/material-overrides/fonts.scss";
 
 html,
 body {
@@ -7,31 +8,19 @@ body {
 }
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-input[type="password"]::placeholder {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-}
-
-
-@font-face {
-  font-family: "fontello";
-  src: url("./assets/fontello-89600d75/font/fontawesome.eot?0000");
-  src: url("./assets/fontello-89600d75/font/fontawesome.eot?0000#iefix")
-      format("embedded-opentype"),
-    url("./assets/fontello-89600d75/font/fontawesome.woff2?0000")
-      format("woff2"),
-    url("./assets/fontello-89600d75/font/fontawesome.woff?0000") format("woff"),
-    url("./assets/fontello-89600d75/font/fontawesome.ttf?0000")
-      format("truetype"),
-    url("./assets/fontello-89600d75/font/fontawesome.svg?0000#fontello")
-      format("svg");
+  font-size: 27px;
 }
 
 input[type="password"] {
   font-family: "fontello";
   font-size: 8px;
   line-height: 14px;
+}
+
+input[type="password"]::placeholder {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
 }

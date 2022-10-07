@@ -34,24 +34,25 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
     const htmlInput = (this.input as any)['_elementRef'].nativeElement;
     this.placeholder = htmlInput.getAttribute('placeholder');
     this.inputType = htmlInput.getAttribute('type');
-    this.matFormField._control = this.input; // !!!
+    this.matFormField._control = this.input; 
   }
 
   ngAfterViewChecked() {
     this.inputValue = this.input.ngControl?.value;
   }
 
-  getInputType(): InputType {
+  public getInputType(): InputType {
     return !this.isPasswordVisible && this.inputType === InputType.password
       ? InputType.password
       : InputType.text;
   }
 
-  isPasswordType(): boolean {
+  public isPasswordType(): boolean {
     return this.inputType === InputType.password;
   }
 
-  togglePasswordVisibility(): void {
+  public togglePasswordVisibility(): void {
     this.isPasswordVisible = !this.isPasswordVisible;
+    //(this.input as any)['_elementRef'].nativeElement.classList.add("ng-touched");
   }
 }

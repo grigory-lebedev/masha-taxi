@@ -1,31 +1,17 @@
 @use "variables" as v;
 
-:host .mat-select ::ng-deep .mat-select-arrow {
-  transform: rotate(0deg);
-}
-
-::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  transform: rotate(180deg);
-}
-
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {
     color: black;
   }
-
   .mat-form-field-label {
     color: #6a6a6a;
     font-size: 15px;
-  }
 
-  .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: #6a6a6a;
+    :focus {
+      color: transparent;
+    }
   }
-
-  .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
-    color: #6a6a6a;
-  }
-
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
     color: v.$accent;
   }
@@ -40,6 +26,7 @@
   }
   .mat-input-element {
     padding: 1px;
+    caret-color: black;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
     padding-bottom: 1.2em;

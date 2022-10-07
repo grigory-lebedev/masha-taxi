@@ -1,41 +1,10 @@
-$main-active-color: #00a1e5;
+@use "./../../scss/material-overrides/variables" as v;
+@import "./../../scss/material-overrides/form-input.scss";
 
 .input__wrapper {
   width: 400px;
 
   .input__icon_show {
-    color: $main-active-color;
-  }
-}
-
-:host::ng-deep {
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: black;
-  }
-  .mat-form-field-label {
-    color: #6a6a6a;
-    font-size: 15px;
-
-    :focus{
-      color: transparent;
-    }
-  }
-  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-    color: $main-active-color;
-  }
-  .mat-form-field-appearance-outline:hover .mat-form-field-outline {
-    color: $main-active-color;
-  }
-  .mat-form-field.mat-focused .mat-form-field-label {
-    color: $main-active-color;
-  }
-  .mat-form-field:hover .mat-form-field-label {
-    color: $main-active-color;
-  }
-  .mat-input-element {
-    padding: 1px;
-  }
-  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding-bottom: 1.2em;
+    color: v.$accent;
   }
 }
