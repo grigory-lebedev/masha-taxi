@@ -1,0 +1,10 @@
+<mat-form-field
+  appearance="outline"
+  class="select__wrapper"
+  hideRequiredMarker="'*'"
+>
+  <mat-label>Role</mat-label>
+  <mat-select [formControl]="formControl">
+    <mat-option *ngFor="let item of selectItems" [value]="item.id">{{ item.value }}</mat-option>
+  </mat-select>
+</mat-form-field>

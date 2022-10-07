@@ -9,8 +9,8 @@
     <input matInput placeholder="FirstName" formControlName="name">
   </tx-form-input>
 
-  <tx-form-select placeholder="Role" formControlName="role" [items]="selectItems"></tx-form-select>
-  
+  <tx-role-select placeholder="Role" formControlName="role"></tx-role-select>
+
   <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
 
   <tx-form-button type="submit" text="BUTTON" [disabled]=!isFormValid()></tx-form-button>

@@ -1,0 +1,22 @@
+.custom-select {
+  min-width: 370px !important;
+  //top: 420px !important;
+  left: 65px !important;
+  transform: translateX(-16px) translateY(20px) !important;
+
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: black;
+  }
+
+  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: none;
+  }
+
+  .mat-option.mat-active {
+    background: none;
+  }
+
+  .mat-option:hover {
+    background-color: #c7f1ff;
+  }
+}

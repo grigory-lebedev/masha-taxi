@@ -1,16 +1,12 @@
-.select__wrapper {
-  width: 100%;
-}
-
 $main-active-color: #00a1e5;
 
-:host .mat-select ::ng-deep .mat-select-arrow{
+:host .mat-select ::ng-deep .mat-select-arrow {
   transform: rotate(0deg);
-  }
-  
-  ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
-    transform: rotate(180deg);
-  }
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  transform: rotate(180deg);
+}
 
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {

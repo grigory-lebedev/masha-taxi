@@ -8,11 +8,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   public title = 'masha-taxi';
-  
-  public selectItems = [
-    { id: 1, value: 'Client' },
-    { id: 2, value: 'Driver' },
-  ];
 
   public isChecked: boolean = false;
 
