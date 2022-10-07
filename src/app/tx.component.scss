@@ -1,3 +1,5 @@
+@import "./shared/scss/material-overrides/form-checkbox.scss";
+
 .form {
   display: flex;
   flex-direction: column;
@@ -5,4 +7,5 @@
   width: 400px;
   gap: 20px;
 }
+
 

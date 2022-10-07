@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormInputComponent } from './shared/form-controls/form-input/form-input.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormCheckboxComponent } from './shared/form-controls/form-checkbox/form-checkbox.component';
 import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormButtonComponent } from './shared/form-controls/form-button/form-button.component';
@@ -18,7 +17,6 @@ import { FormButtonComponent } from './shared/form-controls/form-button/form-but
   declarations: [
     AppComponent,
     FormInputComponent,
-    FormCheckboxComponent,
     FormSelectComponent,
     FormButtonComponent
   ],

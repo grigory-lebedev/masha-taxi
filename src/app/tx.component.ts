@@ -8,17 +8,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   public title = 'masha-taxi';
+  
   public selectItems = [
     { id: 1, value: 'Client' },
     { id: 2, value: 'Driver' },
   ];
 
+  public isChecked: boolean = false;
+
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl({ value: '', disabled: false },Validators.required),
+    password: new FormControl(
+      { value: '', disabled: false },
+      Validators.required
+    ),
     name: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
-    isLoggedIn: new FormControl(false),
+    isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
   });
 
   public isFormValid(): boolean {
@@ -26,9 +32,13 @@ export class AppComponent {
   }
 
   public onSignIn(): void {
-    // console.log((this.demonstrationForm.controls)['password']);
+    console.log(this.demonstrationForm.controls['isLoggedIn']);
     if (!this.isFormValid()) {
       return;
     }
+  }
+
+  public onChangeEvent(event: any) {
+    this.isChecked = !this.isChecked;
   }
 }
