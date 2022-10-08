@@ -7,4 +7,8 @@ import { Component } from "@angular/core";
 })
 export class PageWrapperComponent {
     public isLoggedIn: boolean = false;
+
+    public showLanguagesList(){
+
+    }
 }
