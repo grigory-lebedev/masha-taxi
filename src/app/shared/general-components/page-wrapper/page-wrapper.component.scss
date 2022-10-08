@@ -1,6 +1,49 @@
+@use "./../../scss/material-overrides/variables" as v;
+
 .page-wrapper {
-  background: linear-gradient(89.85deg, #000000 -4.81%, rgba(84, 55, 55, 0) 102.4%),
-              url(./../../../../assets/picture.jfif) no-repeat center center fixed;
+  background: linear-gradient(
+      89.85deg,
+      #000000 -4.81%,
+      rgba(84, 55, 55, 0) 102.4%
+    ),
+    url(./../../../../assets/picture.jfif) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
+
+  .page-wrapper__header {
+    font-family: "Rasa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+
+    .page-wrapper__functionality-block {
+      display: flex;
+      justify-content: flex-end;
+      color: #fefefe;
+      gap: 58px;
+      padding: 12px 50px;
+      background-color: #3c3234e5;
+
+      .page-wrapper__sign-in-link {
+        text-decoration: none;
+        color: #fefefe;
+      }
+    }
+    .page-wrapper__title {
+      background: #241d1e;
+      opacity: 0.9;
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 90px;
+      line-height: 107px;
+      color: v.$primary;
+      padding-left: 170px;
+    }
+  }
+
+  .page-wrapper__content{
+    display: flex;
+    justify-content: center;
+  }
 }

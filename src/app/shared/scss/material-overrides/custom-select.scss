@@ -1,10 +1,10 @@
 @use "variables" as v;
 
 .custom-select {
-  min-width: 370px !important;
-  //top: 420px !important;
-  left: 65px !important;
-  transform: translateX(-16px) translateY(20px) !important;
+  min-width: 460px !important;
+  //top: 760px !important;
+  //left: 65px !important;
+  transform: translateX(-15px) translateY(50px) !important;
 
   .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
     color: black;
