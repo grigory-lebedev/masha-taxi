@@ -20,13 +20,9 @@
       align-items: center;
       color: #fefefe;
       gap: 58px;
-      padding: 12px 50px;
+      padding-right: 50px;
+      height: 52px;
       background-color: #3c3234e5;
-
-      .languages-list {
-        display: flex;
-        align-items: center;
-      }
 
       .page-wrapper__sign-in-link {
         text-decoration: none;
@@ -55,10 +51,3 @@
   }
 }
 
-// :host::ng-deep .mat-icon-button {
-//   transform: rotate(0deg);
-// }
-
-// :host::ng-deep .mat-icon-button.cdk-focused {
-//   transform: rotate(180deg);
-// }

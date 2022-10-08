@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './tx.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import {
+  MatFormFieldModule,
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,6 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormButtonComponent } from './shared/form-controls/form-button/form-button.component';
 import { RoleSelectComponent } from './sign-up/component/role-select/role-select.component';
 import { PageWrapperComponent } from './shared/general-components/page-wrapper/page-wrapper.component';
+import { DropdownMenuComponent } from './shared/general-components/dropdown-menu/dropdown-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { PageWrapperComponent } from './shared/general-components/page-wrapper/p
     FormInputComponent,
     RoleSelectComponent,
     FormButtonComponent,
-    PageWrapperComponent
+    PageWrapperComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,13 @@ import { PageWrapperComponent } from './shared/general-components/page-wrapper/p
     MatCheckboxModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatMenuModule,
   ],
   providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'fill' },
+    },
   ],
   bootstrap: [AppComponent],
 })

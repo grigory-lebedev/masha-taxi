@@ -1,0 +1,43 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  .mat-icon-button {
+    margin-bottom: 4px;
+  }
+}
+
+//отражается на select (подумать как прявязать не к .cdk-overlay-pane, а к mat-menu-panel)
+.cdk-overlay-pane::before {
+  content: url("./../../../../assets/dropdownArrow.svg");
+  top: 5px;
+  left: 134px;
+  position: relative;
+}
+
+.mat-menu-panel {
+  background-color: transparent;
+  border-radius: 12px !important;
+  top: 20px;
+  box-shadow: none;
+
+  .mat-menu-content:not(:empty) {
+    padding: 0 !important;
+    background-color: #3e3436;
+
+    button.mat-menu-item {
+      color: white;
+      border-bottom: 1px solid black;
+      font-family: "Rasa";
+      font-size: 28px;
+      padding: 0 28px;
+
+      line-height: 39px;
+      height: 39px;
+    }
+
+    :last-child {
+      border-bottom: none !important;
+    }
+  }
+}

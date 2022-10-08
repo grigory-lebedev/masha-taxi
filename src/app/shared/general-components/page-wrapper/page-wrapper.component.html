@@ -1,12 +1,7 @@
 <div class="page-wrapper">
   <header class="page-wrapper__header">
-    <div class="page-wrapper__functionality-block" [ngClass]="{'functionality-block_logged-out': !isLoggedIn}">
-      <div class="page-wrapper__languages-list languages-list">
-        <span>English</span>
-        <button class="languages-list__button" mat-icon-button aria-label="Languages list" (click)="showLanguagesList()">
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </button>
-      </div>
+    <div class="page-wrapper__functionality-block" [ngClass]="{ 'functionality-block_logged-out': !isLoggedIn }">
+      <tx-dropdown-menu [items]="languagesList"></tx-dropdown-menu>
       <a *ngIf="isLoggedIn" class="page-wrapper__sign-in-link" href="#">Log Out</a>
     </div>
     <h1 *ngIf="isLoggedIn" class="page-wrapper__title">GeneralSoft Taxi</h1>
