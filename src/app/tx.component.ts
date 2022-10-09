@@ -11,6 +11,12 @@ export class AppComponent {
 
   public isChecked: boolean = false;
 
+  public itemsPerPagesList = [
+    { value: '10', isChosen: true },
+    { value: '20', isChosen: false },
+    { value: '50', isChosen: false },
+  ];
+
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl(
