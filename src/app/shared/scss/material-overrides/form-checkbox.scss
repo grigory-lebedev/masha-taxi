@@ -1,3 +1,5 @@
+@use "colors" as colors;
+
 .mat-checkbox-inner-container {
   margin-right: 11px !important;
   width: 33px !important;
@@ -20,7 +22,7 @@
 
 .mat-checkbox-frame {
   border-width: 1px;
-  border-color: black;
+  border-color: colors.$black;
   border-radius: 3px;
 }
 
@@ -31,5 +33,5 @@
 }
 
 .mat-checkbox-checkmark-path {
-  stroke: black !important;
+  stroke: colors.$black !important;
 }

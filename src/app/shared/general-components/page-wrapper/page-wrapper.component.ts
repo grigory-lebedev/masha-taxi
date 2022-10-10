@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-enum LanguageListItem {
+enum ELanguageListItem {
   english = 'English',
   russian = 'Russian',
   german = 'German',
@@ -14,8 +14,8 @@ enum LanguageListItem {
 export class PageWrapperComponent {
   public isLoggedIn: boolean = true;
   public languageList = [
-    LanguageListItem.english,
-    LanguageListItem.russian,
-    LanguageListItem.german,
+    ELanguageListItem.english,
+    ELanguageListItem.russian,
+    ELanguageListItem.german,
   ];
 }

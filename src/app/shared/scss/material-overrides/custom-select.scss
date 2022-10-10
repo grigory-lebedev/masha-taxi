@@ -5,7 +5,7 @@
   transform: translateX(-15px) translateY(50px) !important;
 
   .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: black;
+    color: colors.$black;
   }
 
   .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {

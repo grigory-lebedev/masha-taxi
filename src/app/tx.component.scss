@@ -1,8 +1,10 @@
+@use "./../app/shared/scss/material-overrides/colors.scss";
+
 .form {
   display: flex;
   flex-direction: column;
   padding: 50px;
   width: 500px;
   gap: 20px;
-  background-color: white;
+  background-color: colors.$white;
 }

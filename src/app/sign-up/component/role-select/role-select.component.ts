@@ -1,11 +1,16 @@
 import { Component, forwardRef } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  Validators,
-} from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
+
+interface IRole {
+  id: number;
+  value: string;
+}
+
+enum ERole {
+  client = 'Client',
+  driver = 'Driver',
+}
 
 @Component({
   selector: 'tx-role-select',
@@ -26,9 +31,9 @@ import { MAT_SELECT_CONFIG } from '@angular/material/select';
 export class RoleSelectComponent implements ControlValueAccessor {
   public formControl: FormControl = new FormControl({}, [Validators.required]);
 
-  public selectItems = [
-    { id: 1, value: 'Client' },
-    { id: 2, value: 'Driver' },
+  public selectItems: IRole[] = [
+    { id: 1, value: ERole.client },
+    { id: 2, value: ERole.driver },
   ];
 
   public isDisabled: boolean = false;

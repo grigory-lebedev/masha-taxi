@@ -3,7 +3,7 @@
 .page-wrapper {
   background: linear-gradient(
       89.85deg,
-      #000000 -4.81%,
+      colors.$black -4.81%,
       rgba(84, 55, 55, 0) 102.4%
     ),
     url(./../../../../assets/picture.jfif) no-repeat center center fixed;
@@ -18,19 +18,19 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      color: #fefefe;
+      color: colors.$text-light;
       gap: 58px;
       padding-right: 50px;
       height: 52px;
-      background-color: #3c3234e5;
+      background-color: colors.$brown-background;
 
       .page-wrapper__sign-in-link {
         text-decoration: none;
-        color: #fefefe;
+        color: colors.$text-light;
       }
     }
     .page-wrapper__title {
-      background: #241d1e;
+      background: colors.$deep-brown-background;
       opacity: 0.9;
       font-family: "Rubik", sans-serif;
       font-size: 90px;

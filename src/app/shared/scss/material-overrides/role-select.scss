@@ -10,7 +10,7 @@
 
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: black;
+    color: colors.$black;
   }
 
   .mat-form-field {
@@ -18,16 +18,16 @@
   }
 
   .mat-form-field-label {
-    color: #6a6a6a;
+    color: colors.$placeholder;
     font-size: 27px;
   }
 
   .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: #6a6a6a;
+    color: colors.$placeholder;
   }
 
   .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
-    color: #6a6a6a;
+    color: colors.$placeholder;
   }
 
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {

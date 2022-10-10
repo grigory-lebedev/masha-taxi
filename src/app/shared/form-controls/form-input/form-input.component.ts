@@ -10,7 +10,7 @@ import {
   MatFormFieldControl,
 } from '@angular/material/form-field';
 
-enum InputType {
+enum EInputType {
   password = 'password',
   text = 'text',
   email = 'email',
@@ -27,7 +27,7 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
 
   public placeholder: string = '';
   public isPasswordVisible: boolean = false;
-  public inputType: string = InputType.text;
+  public inputType: string = EInputType.text;
   public inputValue: string = '';
 
   ngOnInit() {
@@ -41,14 +41,14 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
     this.inputValue = this.input.ngControl?.value;
   }
 
-  public getInputType(): InputType {
-    return !this.isPasswordVisible && this.inputType === InputType.password
-      ? InputType.password
-      : InputType.text;
+  public getInputType(): EInputType {
+    return !this.isPasswordVisible && this.inputType === EInputType.password
+      ? EInputType.password
+      : EInputType.text;
   }
 
   public isPasswordType(): boolean {
-    return this.inputType === InputType.password;
+    return this.inputType === EInputType.password;
   }
 
   public togglePasswordVisibility(): void {

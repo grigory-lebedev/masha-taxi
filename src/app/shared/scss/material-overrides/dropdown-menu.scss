@@ -1,3 +1,5 @@
+@use "colors" as colors;
+
 .mat-menu-panel::before {
   content: url("./../../../../assets/dropdownArrow.svg");
   position: relative;
@@ -22,14 +24,14 @@
 
   .mat-menu-content:not(:empty) {
     padding: 0 !important;
-    background-color: #3e3436;
+    background-color: colors.$dropdown-menu-background;
     border-radius: 12px !important;
 
     button.mat-menu-item {
       display: flex;
       justify-content: center;
-      color: white;
-      border-bottom: 1px solid black;
+      color: colors.$white;
+      border-bottom: 1px solid colors.$black;
       font-family: "Rasa";
       font-size: 28px;
       line-height: 39px;
