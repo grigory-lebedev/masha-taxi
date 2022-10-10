@@ -53,6 +53,5 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
 
   public togglePasswordVisibility(): void {
     this.isPasswordVisible = !this.isPasswordVisible;
-    //(this.input as any)['_elementRef'].nativeElement.classList.add("mat-focused");
   }
 }

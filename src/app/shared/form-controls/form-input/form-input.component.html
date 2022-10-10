@@ -2,7 +2,7 @@
   <mat-form-field
     appearance="outline"
     class="input__wrapper"
-    hideRequiredMarker="'*'"
+    hideRequiredMarker="*"
   >
     <mat-label> {{ placeholder }} </mat-label>
     <ng-content *ngIf="!isPasswordVisible"></ng-content>
@@ -19,6 +19,7 @@
       [attr.aria-label]="'Hide Password'"
       [attr.aria-pressed]="isPasswordVisible"
       type="button"
+      tabindex="-1"
     >
       <mat-icon
         [ngClass]="{

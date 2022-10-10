@@ -5,6 +5,15 @@
   top: 8px;
 }
 
+.mat-icon-button {
+  margin-bottom: 4px !important;
+  transform: rotate(0deg);
+}
+
+.mat-icon-button[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+
 .mat-menu-panel {
   background-color: transparent;
   top: -3px;
@@ -25,15 +34,6 @@
       font-size: 28px;
       line-height: 39px;
       height: 39px;
-
-      .mat-icon-button {
-        margin-bottom: 4px;
-        transform: rotate(0deg);
-      }
-
-      .mat-icon-button[aria-expanded="true"] {
-        transform: rotate(180deg);
-      }
     }
 
     :last-child {

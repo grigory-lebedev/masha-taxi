@@ -19,22 +19,15 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl(
-      { value: '', disabled: false },
-      Validators.required
-    ),
+    password: new FormControl({ value: '', disabled: false }, Validators.required),
     name: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
   });
 
-  public isFormValid(): boolean {
-    return this.demonstrationForm.valid;
-  }
-
   public onSignIn(): void {
     console.log(this.demonstrationForm.controls['isLoggedIn']);
-    if (!this.isFormValid()) {
+    if (!this.demonstrationForm.valid) {
       return;
     }
   }

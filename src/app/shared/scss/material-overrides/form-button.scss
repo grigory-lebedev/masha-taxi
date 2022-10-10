@@ -1,13 +1,11 @@
-:host::ng-deep {
-  .mat-raised-button {
-    width: 100%;
-    padding: 21px 0;
-    font-weight: 400;
-    font-size: 38px;
-    border-radius: 8px;
-  }
+.mat-raised-button {
+  width: 100%;
+  padding: 21px 0 !important;
+  font-weight: 400;
+  font-size: 38px;
+  border-radius: 8px;
+}
 
-  .mat-raised-button.mat-button-disabled.mat-button-disabled {
-    color: white;
-  }
+.mat-raised-button.mat-button-disabled.mat-button-disabled {
+  color: white;
 }

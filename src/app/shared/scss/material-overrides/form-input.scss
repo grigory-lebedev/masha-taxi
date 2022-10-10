@@ -35,6 +35,19 @@
   .mat-form-field:hover .mat-form-field-label {
     color: colors.$accent;
   }
+  .mat-form-field-invalid:hover .mat-form-field-label {
+    color: colors.$warn;
+  }
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid:hover
+    .mat-form-field-outline-thick {
+    color: colors.$warn;
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: colors.$accent !important;
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+    color: colors.$accent !important;
+  }
   .mat-input-element {
     padding: 1px;
     caret-color: black;

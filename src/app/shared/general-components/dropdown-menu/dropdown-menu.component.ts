@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-interface MenuItems {
+interface MenuItem {
   value: string;
   isChosen: boolean;
 }
@@ -11,17 +11,17 @@ interface MenuItems {
   styleUrls: ['./dropdown-menu.component.scss'],
 })
 export class DropdownMenuComponent implements OnInit {
-  @Input() items: MenuItems[] = [];
+  @Input() items: MenuItem[] = [];
 
-  public chosenItem: MenuItems = { value: '', isChosen: true };
-  public displayedItems: MenuItems[] = [];
+  public chosenItem: MenuItem = { value: '', isChosen: true };
+  public displayedItems: MenuItem[] = [];
 
   ngOnInit() {
     this.chosenItem = this.items.find((item) => item.isChosen === true)!;
     this.displayedItems = this.items.filter((item) => item.isChosen === false);
   }
 
-  public displayMenu() {
+  public displayMenu(item: MenuItem): void {
     this.displayedItems = this.items.filter((item) => item != this.chosenItem);
   }
 }

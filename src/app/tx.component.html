@@ -14,7 +14,7 @@
   
     <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
   
-    <tx-form-button type="submit" text="BUTTON" [disabled]=!isFormValid()></tx-form-button>
+    <tx-form-button type="submit" text="BUTTON" [disabled]=!demonstrationForm.valid></tx-form-button>
   </form>
   <tx-dropdown-menu [items]="itemsPerPagesList"></tx-dropdown-menu>
 

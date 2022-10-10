@@ -12,7 +12,7 @@
     <button
       mat-menu-item
       *ngFor="let item of displayedItems"
-      (click)="chosenItem = item; displayMenu()"
+      (click)="displayMenu(item)"
     >
       <span>{{ item.value }}</span>
     </button>
