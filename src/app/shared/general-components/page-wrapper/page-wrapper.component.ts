@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+enum LanguageListItem {
+  english = 'English',
+  russian = 'Russian',
+  german = 'German',
+}
+
 @Component({
   selector: 'tx-page-wrapper',
   templateUrl: './page-wrapper.component.html',
@@ -7,10 +13,9 @@ import { Component } from '@angular/core';
 })
 export class PageWrapperComponent {
   public isLoggedIn: boolean = true;
-
-  public languagesList = [
-    { value: 'English', isChosen: true },
-    { value: 'Russian', isChosen: false },
-    { value: 'German', isChosen: false },
+  public languageList = [
+    LanguageListItem.english,
+    LanguageListItem.russian,
+    LanguageListItem.german,
   ];
 }
