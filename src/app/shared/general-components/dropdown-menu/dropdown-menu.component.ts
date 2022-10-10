@@ -9,7 +9,6 @@ interface MenuItems {
   selector: 'tx-dropdown-menu',
   templateUrl: './dropdown-menu.component.html',
   styleUrls: ['./dropdown-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class DropdownMenuComponent implements OnInit {
   @Input() items: MenuItems[] = [];

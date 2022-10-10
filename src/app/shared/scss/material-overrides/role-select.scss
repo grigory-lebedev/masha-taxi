@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "colors" as colors;
 
 :host .mat-select ::ng-deep .mat-select-arrow {
   transform: rotate(0deg);
@@ -31,16 +31,16 @@
   }
 
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field-appearance-outline:hover .mat-form-field-outline {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field.mat-focused .mat-form-field-label {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field:hover .mat-form-field-label {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-input-element {
     padding: 1px;

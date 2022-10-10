@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "colors" as colors;
 
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {
@@ -24,16 +24,16 @@
     margin-top: -0.6em;
   }
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field-appearance-outline:hover .mat-form-field-outline {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field.mat-focused .mat-form-field-label {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-form-field:hover .mat-form-field-label {
-    color: v.$accent;
+    color: colors.$accent;
   }
   .mat-input-element {
     padding: 1px;
@@ -49,10 +49,11 @@
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-  .mat-form-field-label,
+    .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-form-field-can-float
-  .mat-input-server:focus + .mat-form-field-label-wrapper
-  .mat-form-field-label {
+    .mat-input-server:focus
+    + .mat-form-field-label-wrapper
+    .mat-form-field-label {
     transform: translateY(-1.3em) scale(0.75);
   }
 }

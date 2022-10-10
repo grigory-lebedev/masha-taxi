@@ -1,12 +1,12 @@
 @use "@angular/material" as mat;
-@use './app/shared/scss/material-overrides/variables' as v;
+@use './app/shared/scss/material-overrides/colors.scss' as colors;
 
 @include mat.core();
 
 $primary-color: (
-  100: v.$primary,
-  500: v.$primary,
-  700: v.$primary,
+  100: colors.$primary,
+  500: colors.$primary,
+  700: colors.$primary,
   contrast: (
     100: #ffffff,
     500: #ffffff,
@@ -15,9 +15,9 @@ $primary-color: (
 );
 
 $accent-color: (
-  100: v.$accent-light,
-  500: v.$accent,
-  700: v.$accent,
+  100: colors.$accent-light,
+  500: colors.$accent,
+  700: colors.$accent,
   contrast: (
     100: #ffffff,
     500: #ffffff,
@@ -26,9 +26,9 @@ $accent-color: (
 );
 
 $warn-color: (
-  100: v.$warn-light,
-  500: v.$warn,
-  700: v.$warn,
+  100: colors.$warn-light,
+  500: colors.$warn,
+  700: colors.$warn,
   contrast: (
     100: #ffffff,
     500: #ffffff,
@@ -52,4 +52,3 @@ $taxi-theme: mat.define-light-theme(
 );
 
 @include mat.all-component-themes($taxi-theme);
-

@@ -1,9 +1,7 @@
-@use "variables" as v;
+@use "colors" as colors;
 
 .custom-select {
   min-width: 460px !important;
-  //top: 760px !important;
-  //left: 65px !important;
   transform: translateX(-15px) translateY(50px) !important;
 
   .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
@@ -19,6 +17,6 @@
   }
 
   .mat-option:hover {
-    background-color: v.$accent-light;
+    background-color: colors.$accent-light;
   }
 }

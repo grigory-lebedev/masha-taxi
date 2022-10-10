@@ -4,48 +4,4 @@
   color: white;
   font-family: "Rasa";
   font-size: 28px;
-
-  .mat-icon-button {
-    margin-bottom: 4px;
-    transform: rotate(0deg);
-  }
-
-  .mat-icon-button[aria-expanded="true"] {
-    transform: rotate(180deg);
-  }
-}
-
-.mat-menu-panel::before {
-  content: url("./../../../../assets/dropdownArrow.svg");
-  position: relative;
-  left: 116px;
-  top: 8px;
-}
-
-.mat-menu-panel {
-  background-color: transparent;
-  top: -3px;
-  box-shadow: none;
-  width: 147px;
-
-  .mat-menu-content:not(:empty) {
-    padding: 0 !important;
-    background-color: #3e3436;
-    border-radius: 12px !important;
-
-    button.mat-menu-item {
-      display: flex;
-      justify-content: center;
-      color: white;
-      border-bottom: 1px solid black;
-      font-family: "Rasa";
-      font-size: 28px;
-      line-height: 39px;
-      height: 39px;
-    }
-
-    :last-child {
-      border-bottom: none !important;
-    }
-  }
 }

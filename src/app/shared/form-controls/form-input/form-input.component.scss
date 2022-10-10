@@ -1,16 +1,17 @@
-@use "./../../scss/material-overrides/variables" as v;
+@use "./../../scss/material-overrides/colors" as colors;
 @import "./../../scss/material-overrides/form-input.scss";
 
 .input__wrapper {
   width: 100%;
 
   .input__icon_show {
-    color: v.$accent;
+    color: colors.$accent;
   }
 }
 
-:host::ng-deep {
-  .mat-form-field:hover .mat-form-field-label {
-    // label!
-  }
-}
+//TODO: path to label to fix eye icon problem
+// :host::ng-deep {
+//   .mat-form-field:hover .mat-form-field-label {
+    
+//   }
+// }
