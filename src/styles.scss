@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "material-theme.scss";
+@import "./app/shared/scss/material-overrides/custom-select.scss";
+@import "./app/shared/scss/material-overrides/fonts.scss";
+@import "./app/shared/scss/material-overrides/form-checkbox.scss";
+@import "./app/shared/scss/material-overrides/dropdown-menu.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 27px;
+}
+
+input[type="password"] {
+  font-family: "fontello";
+  font-size: 17px;
+  line-height: 27px;
+}
+
+input[type="password"]::placeholder {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 27px;
+}

@@ -1,0 +1,10 @@
+@use "./shared/scss/colors.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 500px;
+  gap: 20px;
+  background-color: colors.$white;
+}

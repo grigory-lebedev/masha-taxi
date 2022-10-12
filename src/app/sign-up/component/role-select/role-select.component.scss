@@ -1,0 +1,89 @@
+@use "./../../../shared/scss/colors.scss" as colors;
+
+.select__wrapper {
+  width: 100%;
+}
+
+:host .mat-select ::ng-deep .mat-select-arrow {
+  transform: rotate(0deg);
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  transform: rotate(180deg);
+}
+
+:host::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: colors.$black;
+  }
+
+  .mat-form-field {
+    font-size: 27px;
+  }
+
+  .mat-form-field-label {
+    color: colors.$placeholder;
+    font-size: 27px;
+  }
+
+  .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: colors.$placeholder;
+  }
+
+  .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+    color: colors.$placeholder;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+    color: colors.$accent;
+  }
+  .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+    color: colors.$accent;
+  }
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: colors.$accent;
+  }
+  .mat-form-field:hover .mat-form-field-label {
+    color: colors.$accent;
+  }
+  .mat-form-field-invalid:hover .mat-form-field-label {
+    color: colors.$warn;
+  }
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid:hover
+    .mat-form-field-outline-thick {
+    color: colors.$warn;
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: colors.$accent !important;
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+    color: colors.$accent !important;
+  }
+  .mat-input-element {
+    padding: 1px;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 11px 0 24px;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-label {
+    margin-top: -0.6em;
+  }
+
+  .mat-select-arrow {
+    border-left: 35px solid transparent !important;
+    border-right: none !important;
+    border-top: 15px solid transparent !important;
+    border-image-source: url("./../../../../assets/arrow.svg") !important;
+    border-image-repeat: stretch !important;
+    margin-top: 4px;
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label,
+  .mat-form-field-appearance-outline.mat-form-field-can-float
+  .mat-input-server:focus + .mat-form-field-label-wrapper
+  .mat-form-field-label {
+    transform: translateY(-1.3em) scale(0.75);
+  }
+}
+

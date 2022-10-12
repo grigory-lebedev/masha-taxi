@@ -1,0 +1,22 @@
+@use "./../colors.scss" as colors;
+
+.custom-select {
+  min-width: 460px !important;
+  transform: translateX(-15px) translateY(50px) !important;
+
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: colors.$black;
+  }
+
+  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: none;
+  }
+
+  .mat-option.mat-active {
+    background: none;
+  }
+
+  .mat-option:hover {
+    background-color: colors.$accent-light;
+  }
+}

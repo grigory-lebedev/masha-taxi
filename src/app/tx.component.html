@@ -1,0 +1,22 @@
+<tx-page-wrapper>
+  <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn() ">
+    <tx-form-input>
+      <input matInput type="email" placeholder="Email" formControlName="email">
+    </tx-form-input>
+    <tx-form-input>
+      <input matInput type="password" placeholder="Password" formControlName="password">
+    </tx-form-input>
+    <tx-form-input>
+      <input matInput placeholder="FirstName" formControlName="name">
+    </tx-form-input>
+  
+    <tx-role-select placeholder="Role" formControlName="role"></tx-role-select>
+  
+    <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
+  
+    <tx-form-button type="submit" text="BUTTON" [disabled]=!demonstrationForm.valid></tx-form-button>
+  </form>
+  <tx-dropdown-menu [items]="itemsPerPagesList"></tx-dropdown-menu>
+
+</tx-page-wrapper>
+

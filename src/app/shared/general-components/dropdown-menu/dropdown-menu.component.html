@@ -1,0 +1,20 @@
+<div class="menu">
+  <span>{{ chosenItem }}</span>
+  <button
+    class="menu__button"
+    mat-icon-button
+    [matMenuTriggerFor]="beforeMenu"
+    aria-label="menu"
+  >
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button
+      mat-menu-item
+      *ngFor="let item of displayedItems"
+      (click)="displayMenu(item)"
+    >
+      <span>{{ item }}</span>
+    </button>
+  </mat-menu>
+</div>

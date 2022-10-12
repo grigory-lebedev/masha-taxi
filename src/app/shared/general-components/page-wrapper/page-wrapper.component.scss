@@ -1,0 +1,53 @@
+@use "./../../scss/colors.scss" as colors;
+
+.page-wrapper {
+  background: linear-gradient(
+      89.85deg,
+      colors.$black -4.81%,
+      rgba(84, 55, 55, 0) 102.4%
+    ),
+    url(./../../../../assets/picture.jfif) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+
+  .page-wrapper__header {
+    font-family: "Rasa";
+    font-size: 28px;
+
+    .page-wrapper__functionality-block {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: colors.$text-light;
+      gap: 58px;
+      padding-right: 50px;
+      height: 52px;
+      background-color: colors.$brown-background;
+
+      .page-wrapper__sign-in-link {
+        text-decoration: none;
+        color: colors.$text-light;
+      }
+    }
+    .page-wrapper__title {
+      background: colors.$deep-brown-background;
+      opacity: 0.9;
+      font-family: "Rubik", sans-serif;
+      font-size: 90px;
+      line-height: 107px;
+      color: colors.$primary;
+      padding-left: 170px;
+    }
+  }
+
+  .page-wrapper__functionality-block.functionality-block_logged-out {
+    background-color: transparent !important;
+    padding-right: 174px !important;
+  }
+
+  .page-wrapper__content {
+    display: flex;
+    justify-content: center;
+    gap: 100px;  //temporary, just for dropdown demonstration
+  }
+}
