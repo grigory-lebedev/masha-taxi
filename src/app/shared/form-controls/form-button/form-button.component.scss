@@ -1,4 +1,4 @@
-@use "colors" as colors;
+@use "./../../scss/material-overrides/colors.scss" as colors;
 
 .mat-raised-button {
   width: 100%;

@@ -1,4 +1,4 @@
-@use "colors" as colors;
+@use "./../colors.scss" as colors;
 
 .mat-menu-panel::before {
   content: url("./../../../../assets/dropdownArrow.svg");

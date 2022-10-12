@@ -9,12 +9,7 @@ import {
   MatFormField,
   MatFormFieldControl,
 } from '@angular/material/form-field';
-
-enum EInputType {
-  password = 'password',
-  text = 'text',
-  email = 'email',
-}
+import { EInputType } from './../../enums/input-type';
 
 @Component({
   selector: 'tx-form-input',

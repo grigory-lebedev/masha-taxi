@@ -13,15 +13,15 @@ export class DropdownMenuComponent implements OnInit {
 
   ngOnInit() {
     this.chosenItem = this.items[0];
-    this._setDisplayedItems();
+    this.setDisplayedItems();
   }
 
   public displayMenu(item: string): void {
     this.chosenItem = item;
-    this._setDisplayedItems();
+    this.setDisplayedItems();
   }
 
-  private _setDisplayedItems(){
+  private setDisplayedItems(){
     this.displayedItems = this.items.filter((item) => item != this.chosenItem);
   }
 }

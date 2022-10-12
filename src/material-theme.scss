@@ -1,5 +1,5 @@
 @use "@angular/material" as mat;
-@use './app/shared/scss/material-overrides/colors.scss' as colors;
+@use './app/shared/scss/colors.scss' as colors;
 
 @include mat.core();
 

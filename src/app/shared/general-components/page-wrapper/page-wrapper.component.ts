@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-enum ELanguageListItem {
-  english = 'English',
-  russian = 'Russian',
-  german = 'German',
-}
+import { ELanguageListItem } from './../../enums/language';
 
 @Component({
   selector: 'tx-page-wrapper',

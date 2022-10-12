@@ -1,16 +1,13 @@
 import { Component, forwardRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+  Validators,
+} from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
-
-interface IRole {
-  id: number;
-  value: string;
-}
-
-enum ERole {
-  client = 'Client',
-  driver = 'Driver',
-}
+import { ERole } from './../../../shared/enums/role';
+import { IRole } from './../../../shared/models/language';
 
 @Component({
   selector: 'tx-role-select',
