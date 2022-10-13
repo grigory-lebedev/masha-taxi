@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ELanguageListItem } from './../../enums/language';
+import { languages } from '../../constants';
 
 @Component({
   selector: 'tx-page-wrapper',
@@ -8,9 +8,5 @@ import { ELanguageListItem } from './../../enums/language';
 })
 export class PageWrapperComponent {
   public isLoggedIn: boolean = true;
-  public languageList = [
-    ELanguageListItem.english,
-    ELanguageListItem.russian,
-    ELanguageListItem.german,
-  ];
+  public languageList = languages;
 }

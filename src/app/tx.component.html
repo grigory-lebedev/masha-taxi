@@ -17,6 +17,16 @@
     <tx-form-button type="submit" text="BUTTON" [disabled]=!demonstrationForm.valid></tx-form-button>
   </form>
   <tx-dropdown-menu [items]="itemsPerPagesList"></tx-dropdown-menu>
+  
+  <div class="button-demo">
+    <tx-button text="Order" color="primary" size="large" [disabled]=false></tx-button>
+    <tx-button text="Upload photo" color="action" size="large" [disabled]=false></tx-button>
+    <tx-button text="Accept" color="accept" size="small" [disabled]=false></tx-button>
+    <tx-button text="Cancel" color="cancel" size="small" [disabled]=false></tx-button>
+    <tx-button text="Ok" color="accept" size="pop-up-small" [disabled]=false></tx-button>
+    <tx-button text="Ok" color="accept" size="pop-up-small" [disabled]=true></tx-button>
+    <tx-button text="Block Until" color="cancel" size="pop-up-large" [disabled]=false></tx-button>
+  </div>
 
 </tx-page-wrapper>
 
