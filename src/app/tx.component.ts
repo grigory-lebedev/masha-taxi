@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ENotification } from './shared/enums/notification-type';
+import { NotificationService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
   selector: 'tx-root',
@@ -7,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./tx.component.scss'],
 })
 export class AppComponent {
+  constructor(private notificationService: NotificationService) {}
+
   public title = 'masha-taxi';
 
   public isChecked: boolean = false;
@@ -30,5 +34,17 @@ export class AppComponent {
 
   public onChangeEvent(event: any) {
     this.isChecked = !this.isChecked;
+  }
+
+  public showSuccessNotification() {
+    this.notificationService.showNotification('Success message', ENotification.success);
+  }
+
+  public showWarnNotification() {
+    this.notificationService.showNotification('Warning message', ENotification.warn);
+  }
+
+  public showErrorNotification() {
+    this.notificationService.showNotification('Error message', ENotification.error);
   }
 }

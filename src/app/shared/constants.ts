@@ -1,4 +1,5 @@
 import { ELanguageListItem } from './enums/language';
+import { ENotification } from './enums/notification-type';
 import { ERole } from './enums/role';
 
 export const roles = [
@@ -11,3 +12,9 @@ export const languages = [
   ELanguageListItem.russian,
   ELanguageListItem.german,
 ];
+
+export const notifications = [
+  ENotification.success,
+  ENotification.warn,
+  ENotification.error
+]

@@ -28,5 +28,13 @@
     <tx-button text="Block Until" color="cancel" size="pop-up-large" [disabled]=false></tx-button>
   </div>
 
+  <div class="notification-demo">
+    <tx-button text="Success" color="accept" size="small" [disabled]=false (click)="showSuccessNotification()"></tx-button>
+    <tx-button text="Warn" color="primary" size="small" [disabled]=false (click)="showWarnNotification()"></tx-button>
+    <tx-button text="Error" color="cancel" size="small" [disabled]=false (click)="showErrorNotification()"></tx-button>
+  </div>
+  <tx-notification></tx-notification>
 </tx-page-wrapper>
+
+
 
