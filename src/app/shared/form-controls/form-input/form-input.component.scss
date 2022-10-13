@@ -10,7 +10,7 @@
 
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: colors.$black;
+    color: black;
   }
   .mat-form-field {
     font-size: 27px;
@@ -58,7 +58,7 @@
   }
   .mat-input-element {
     padding: 1px;
-    caret-color: colors.$black;
+    caret-color: black;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 11px 0 24px;
@@ -79,9 +79,8 @@
   }
 }
 
-
 //TODO: path to label to fix eye icon problem
 // :host::ng-deep {
-//   .mat-form-field:hover .mat-form-field-label {    
+//   .mat-form-field:hover .mat-form-field-label {
 //   }
 // }

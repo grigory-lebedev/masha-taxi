@@ -3,7 +3,7 @@
 .page-wrapper {
   background: linear-gradient(
       89.85deg,
-      colors.$black -4.81%,
+      black -4.81%,
       rgba(84, 55, 55, 0) 102.4%
     ),
     url(./../../../../assets/picture.jfif) no-repeat center center fixed;
@@ -48,6 +48,6 @@
   .page-wrapper__content {
     display: flex;
     justify-content: center;
-    gap: 100px;  //temporary, just for dropdown demonstration
+    gap: 100px; //temporary, just for dropdown demonstration
   }
 }

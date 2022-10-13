@@ -14,7 +14,7 @@
 
 :host::ng-deep {
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: colors.$black;
+    color: black;
   }
 
   .mat-form-field {
@@ -79,11 +79,11 @@
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-  .mat-form-field-label,
+    .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-form-field-can-float
-  .mat-input-server:focus + .mat-form-field-label-wrapper
-  .mat-form-field-label {
+    .mat-input-server:focus
+    + .mat-form-field-label-wrapper
+    .mat-form-field-label {
     transform: translateY(-1.3em) scale(0.75);
   }
 }
-

@@ -1,5 +1,5 @@
 @use "@angular/material" as mat;
-@use './app/shared/scss/colors.scss' as colors;
+@use "./app/shared/scss/colors.scss" as colors;
 
 @include mat.core();
 
@@ -36,9 +36,8 @@ $warn-color: (
   ),
 );
 
-
 $taxi-theme-primary: mat.define-palette($primary-color);
-$taxi-theme-accent: mat.define-palette($accent-color); 
+$taxi-theme-accent: mat.define-palette($accent-color);
 $taxi-theme-warn: mat.define-palette($warn-color);
 
 $taxi-theme: mat.define-light-theme(

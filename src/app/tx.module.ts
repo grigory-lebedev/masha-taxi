@@ -18,6 +18,7 @@ import { RoleSelectComponent } from './sign-up/component/role-select/role-select
 import { PageWrapperComponent } from './shared/general-components/page-wrapper/page-wrapper.component';
 import { DropdownMenuComponent } from './shared/general-components/dropdown-menu/dropdown-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { ButtonComponent } from './shared/general-components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
     FormButtonComponent,
     PageWrapperComponent,
     DropdownMenuComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

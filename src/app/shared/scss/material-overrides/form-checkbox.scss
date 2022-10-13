@@ -22,7 +22,7 @@
 
 .mat-checkbox-frame {
   border-width: 1px;
-  border-color: colors.$black;
+  border-color: black;
   border-radius: 3px;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .mat-checkbox-checkmark-path {
-  stroke: colors.$black !important;
+  stroke: black !important;
 }

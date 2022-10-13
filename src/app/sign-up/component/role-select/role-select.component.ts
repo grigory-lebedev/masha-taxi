@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
-import { ERole } from './../../../shared/enums/role';
+import { roles } from 'src/app/shared/constants';
 import { IRole } from './../../../shared/models/language';
 
 @Component({
@@ -28,10 +28,7 @@ import { IRole } from './../../../shared/models/language';
 export class RoleSelectComponent implements ControlValueAccessor {
   public formControl: FormControl = new FormControl({}, [Validators.required]);
 
-  public selectItems: IRole[] = [
-    { id: 1, value: ERole.client },
-    { id: 2, value: ERole.driver },
-  ];
+  public selectItems: IRole[] = roles;
 
   public isDisabled: boolean = false;
 
