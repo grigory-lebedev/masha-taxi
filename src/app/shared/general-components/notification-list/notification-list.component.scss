@@ -1,0 +1,60 @@
+@use "../../scss/colors.scss" as colors;
+
+$startBottom: 46px;
+$notificationHeight: 74px;
+$gap: 10px;
+
+.notification-list {
+  :nth-child(1) {
+    bottom: $startBottom;
+  }
+  :nth-child(2) {
+    bottom: calc($startBottom + $notificationHeight + $gap);
+  }
+  :nth-child(3) {
+    bottom: calc($startBottom + 2 * $notificationHeight + 2 * $gap);
+  }
+  :nth-child(4) {
+    bottom: calc($startBottom + 3 * $notificationHeight + 3 * $gap);
+  }
+  :nth-child(5) {
+    bottom: calc($startBottom + 4 * $notificationHeight + 4 * $gap);
+  }
+
+  .notification-item {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: $notificationHeight;
+    right: 60px;
+    border-radius: 10px;
+    color: white;
+    line-height: 29px;
+
+    &_success {
+      background-color: colors.$success-message;
+    }
+    &_warn {
+      background-color: colors.$warning-message;
+    }
+    &_error {
+      background-color: colors.$error-message;
+    }
+
+    &__text {
+      margin: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      margin-left: 35px;
+    }
+
+    &__button {
+      bottom: 0 !important;
+      margin-right: 18px;
+    }
+  }
+}

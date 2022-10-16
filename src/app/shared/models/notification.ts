@@ -1,5 +1,5 @@
 export interface INotification {
-  isShowUp: boolean;
+  id: string;
   message: string;
-  type: string | undefined;
+  type: string;
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ENotification } from './shared/enums/notification-type';
-import { NotificationService } from './shared/general-components/notification/service/notification.service';
+import { NotificationListService } from './shared/general-components/notification-list/service/notification-list.service';
 
 @Component({
   selector: 'tx-root',
@@ -9,7 +9,7 @@ import { NotificationService } from './shared/general-components/notification/se
   styleUrls: ['./tx.component.scss'],
 })
 export class AppComponent {
-  constructor(private notificationService: NotificationService) {}
+  constructor(private notificationListService: NotificationListService) {}
 
   public title = 'masha-taxi';
 
@@ -19,7 +19,10 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl({ value: '', disabled: false }, Validators.required),
+    password: new FormControl(
+      { value: '', disabled: false },
+      Validators.required
+    ),
     name: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
@@ -37,14 +40,23 @@ export class AppComponent {
   }
 
   public showSuccessNotification() {
-    this.notificationService.showNotification('Success message', ENotification.success);
+    this.notificationListService.showNotification(
+      'Offer was accepted. Your trip is started',
+      ENotification.success
+    );
   }
 
   public showWarnNotification() {
-    this.notificationService.showNotification('Warning message', ENotification.warn);
+    this.notificationListService.showNotification(
+      'We sent the activation link to email address. Please activate your account.',
+      ENotification.warn
+    );
   }
 
   public showErrorNotification() {
-    this.notificationService.showNotification('Error message', ENotification.error);
+    this.notificationListService.showNotification(
+      'Your password is wrong.',
+      ENotification.error
+    );
   }
 }

@@ -19,7 +19,7 @@ import { PageWrapperComponent } from './shared/general-components/page-wrapper/p
 import { DropdownMenuComponent } from './shared/general-components/dropdown-menu/dropdown-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { ButtonComponent } from './shared/general-components/button/button.component';
-import { NotificationComponent } from './shared/general-components/notification/notification.component';
+import { NotificationListComponent } from './shared/general-components/notification-list/notification-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { NotificationComponent } from './shared/general-components/notification/
     PageWrapperComponent,
     DropdownMenuComponent,
     ButtonComponent,
-    NotificationComponent
+    NotificationListComponent,
   ],
   imports: [
     BrowserModule,
