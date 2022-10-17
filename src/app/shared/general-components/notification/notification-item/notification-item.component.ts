@@ -8,7 +8,7 @@ import { NotificationListService } from '../service/notification.service';
   styleUrls: ['./notification-item.component.scss'],
 })
 export class NotificationItemComponent implements OnInit, OnDestroy {
-  @Input() notification: INotification = { id: "", message: "", type: "" };
+  @Input() notification: INotification = { id: '', message: '', type: '' };
 
   public notificationList: INotification[] = [];
   public timeoutID: any;
@@ -17,7 +17,7 @@ export class NotificationItemComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.timeoutID = setTimeout(() => {
       this.notificationListService.removeNotificationById(this.notification.id);
-    }, 800000);
+    }, 8000);
   }
 
   public closeNotification(notificationId: string) {
