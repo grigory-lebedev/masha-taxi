@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ENotification } from './shared/enums/notification-type';
-import { NotificationListService } from './shared/general-components/notification-list/service/notification-list.service';
+import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
   selector: 'tx-root',
@@ -40,23 +40,14 @@ export class AppComponent {
   }
 
   public showSuccessNotification() {
-    this.notificationListService.showNotification(
-      'Offer was accepted. Your trip is started',
-      ENotification.success
-    );
+    this.notificationListService.showSuccess('Offer was accepted. Your trip is started');
   }
 
   public showWarnNotification() {
-    this.notificationListService.showNotification(
-      'We sent the activation link to email address. Please activate your account.',
-      ENotification.warn
-    );
+    this.notificationListService.showWarn('We sent the activation link to email address. Please activate your account.');
   }
 
   public showErrorNotification() {
-    this.notificationListService.showNotification(
-      'Your password is wrong.',
-      ENotification.error
-    );
+    this.notificationListService.showError('Your password is wrong.');
   }
 }

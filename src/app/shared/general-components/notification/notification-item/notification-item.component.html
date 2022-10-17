@@ -1,6 +1,4 @@
-<div class="notification-list">
-  <div @showInOut
-    *ngFor="let notification of notificationList"
+<div 
     class="notification-list__item notification-item"
     [ngClass]="{
       'notification-item_success': notification.type === 'success',
@@ -13,4 +11,3 @@
       <mat-icon>close</mat-icon>
     </button>
   </div>
-</div>
