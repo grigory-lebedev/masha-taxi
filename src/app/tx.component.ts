@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { popupShowAnimation } from './shared/animations';
-import { ENotification } from './shared/enums/notification-type';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
@@ -57,7 +56,7 @@ export class AppComponent {
     this.isPopupActive = true;
   }
 
-  public closePopUp() {
-    this.isPopupActive = false;
+  public closePopUp(value: boolean) {
+    this.isPopupActive = value;
   }
 }

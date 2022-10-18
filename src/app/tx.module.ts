@@ -22,6 +22,7 @@ import { ButtonComponent } from './shared/general-components/button/button.compo
 import { NotificationListComponent } from './shared/general-components/notification/notification-list/notification-list.component';
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
 import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
+import { ConfirmationPopUpComponent } from './shared/general-components/confirmation-popup/confirmation-popup.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BasePopUpComponent } from './shared/general-components/base-popup/base-
     ButtonComponent,
     NotificationListComponent,
     NotificationItemComponent,
-    BasePopUpComponent
+    BasePopUpComponent,
+    ConfirmationPopUpComponent
   ],
   imports: [
     BrowserModule,
