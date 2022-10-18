@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { popupShowAnimation } from './shared/animations';
 import { ENotification } from './shared/enums/notification-type';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
@@ -7,15 +8,16 @@ import { NotificationListService } from './shared/general-components/notificatio
   selector: 'tx-root',
   templateUrl: './tx.component.html',
   styleUrls: ['./tx.component.scss'],
+  animations: [popupShowAnimation]
 })
 export class AppComponent {
-  constructor(private notificationListService: NotificationListService) {}
-
   public title = 'masha-taxi';
-
   public isChecked: boolean = false;
-
+  public isPopupActive: boolean = false;
   public itemsPerPagesList = ['10', '20', '50'];
+  public clientName = "Ivan Ivanov";
+
+  constructor(private notificationListService: NotificationListService) {}
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -49,5 +51,13 @@ export class AppComponent {
 
   public showErrorNotification() {
     this.notificationListService.showError('Your password is wrong.');
+  }
+
+  public showPopUp() {
+    this.isPopupActive = true;
+  }
+
+  public closePopUp() {
+    this.isPopupActive = false;
   }
 }

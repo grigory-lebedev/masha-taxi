@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ButtonComponent } from './shared/general-components/button/button.component';
 import { NotificationListComponent } from './shared/general-components/notification/notification-list/notification-list.component';
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
+import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NotificationItemComponent } from './shared/general-components/notificat
     DropdownMenuComponent,
     ButtonComponent,
     NotificationListComponent,
-    NotificationItemComponent
+    NotificationItemComponent,
+    BasePopUpComponent
   ],
   imports: [
     BrowserModule,
