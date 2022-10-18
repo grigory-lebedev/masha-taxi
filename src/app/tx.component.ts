@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ENotification } from './shared/enums/notification-type';
+import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
   selector: 'tx-root',
@@ -7,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./tx.component.scss'],
 })
 export class AppComponent {
+  constructor(private notificationListService: NotificationListService) {}
+
   public title = 'masha-taxi';
 
   public isChecked: boolean = false;
@@ -15,7 +19,10 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl({ value: '', disabled: false }, Validators.required),
+    password: new FormControl(
+      { value: '', disabled: false },
+      Validators.required
+    ),
     name: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
@@ -30,5 +37,17 @@ export class AppComponent {
 
   public onChangeEvent(event: any) {
     this.isChecked = !this.isChecked;
+  }
+
+  public showSuccessNotification() {
+    this.notificationListService.showSuccess('Offer was accepted. Your trip is started');
+  }
+
+  public showWarnNotification() {
+    this.notificationListService.showWarn('We sent the activation link to email address. Please activate your account.');
+  }
+
+  public showErrorNotification() {
+    this.notificationListService.showError('Your password is wrong.');
   }
 }

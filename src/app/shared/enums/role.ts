@@ -1,4 +1,4 @@
 export enum ERole {
-    client = 'Client',
-    driver = 'Driver',
-  }
+  client = 'Client',
+  driver = 'Driver',
+}
