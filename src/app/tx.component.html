@@ -39,7 +39,7 @@
     @popupShow 
     *ngIf="isPopupActive"
     (isPopupActive)="closePopUp($event)"
-    [text]="'Are you sure you want to accept the offer from {{clientName}}?'"
+    text="Are you sure you want to accept the offer from {{clientName}}?"
   ></tx-confirmation-popup>
 
 </tx-page-wrapper>
