@@ -35,6 +35,5 @@ export class NotificationListService {
   public removeNotificationById(notificationId: string){
     const notificationToBeRemoved = this.notificationList.findIndex((obj) => obj.id === notificationId);
     this.notificationList.splice(notificationToBeRemoved, 1);
-    console.log(this.notificationList);
   }
 }

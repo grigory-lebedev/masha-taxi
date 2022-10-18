@@ -1,44 +1,46 @@
-import {
-  animate,
-  keyframes,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 export const showInOutAnimation = trigger('showInOut', [
+  state('finalState', style({
+    opacity: 1,
+    position: 'relative',
+    right: '0',
+    bottom: '0',
+  })),
   //from nothing to somewhere
   transition('void => *', [
     style({
       opacity: 0,
       bottom: '-100px',
       right: '0',
-      transform: 'scale(0)',
-      position: 'absolute',
+      position: 'relative',
     }),
-    animate('1000ms'),
+    animate('600ms'),
   ]),
   //into nothing
   transition('* => void', [
-    animate('500ms',
+    animate('1000ms',
       keyframes([
         style({
+          bottom: '*',
           left: '-100px',
-          position: 'absolute',
+          position: 'relative',
           opacity: 0.7,
           offset: 0,
         }),
         style({
+          bottom: '*',
           left: '-500px',
-          position: 'absolute',
+          position: 'relative',
           opacity: 0.3,
           offset: 0.3,
         }),
         style({
+          bottom: '*',
           left: '-900px',
-          position: 'absolute',
+          position: 'relative',
           opacity: 0,
-          offset: 1
+          offset: 1,
         }),
       ])
     ),

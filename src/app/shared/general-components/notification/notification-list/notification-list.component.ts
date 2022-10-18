@@ -11,10 +11,10 @@ import { NotificationListService } from '../service/notification.service';
 })
 export class NotificationListComponent implements OnInit {
   public notificationList: INotification[] = [];
+  public animationState: string = "finalState";
   constructor(private notificationService: NotificationListService) {}
 
   ngOnInit() {
     this.notificationList = this.notificationService.notificationList;
-    console.log(this.notificationList.length);
   }
 }
