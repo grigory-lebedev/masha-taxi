@@ -19,27 +19,3 @@
   align-items: center;
   gap: 20px;
 }
-
-//TODO: temporary styles for popup content
-.demo-popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 1100px;
-  height: 200px;
-
-  .button-wrapper {
-    display: flex;
-    gap: 56px;
-  }
-
-  .demo-popup-content__text {
-    font-family: "Rasa";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 51px;
-  }
-}

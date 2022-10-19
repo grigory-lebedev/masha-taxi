@@ -22,6 +22,8 @@ import { ButtonComponent } from './shared/general-components/button/button.compo
 import { NotificationListComponent } from './shared/general-components/notification/notification-list/notification-list.component';
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
 import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
+import { OpenPopupDirective } from './shared/general-components/base-popup/open-popup.directive';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { BasePopUpComponent } from './shared/general-components/base-popup/base-
     ButtonComponent,
     NotificationListComponent,
     NotificationItemComponent,
-    BasePopUpComponent
+    BasePopUpComponent,
+    OpenPopupDirective
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { BasePopUpComponent } from './shared/general-components/base-popup/base-
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     {

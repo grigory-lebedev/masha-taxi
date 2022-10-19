@@ -1,8 +1,27 @@
-<div class="base-popup__wrapper">
-  <div class="base-popup__card">
-    <button class="base-popup__close-button" mat-icon-button>
-      <mat-icon>close</mat-icon>
-    </button>
-    <ng-content></ng-content>
+<div class="base-popup" mat-dialog-content>
+  <button class="base-popup__close-button" mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+  <!-- <ng-content></ng-content> -->
+  <!-- temporary content -->
+  <div class="demo-popup-content">
+    <p class="demo-popup-content__text">
+      Are you sure you want to accept the offer from Ivan Ivanov?
+    </p>
+    <div class="demo-popup-content__wrapper button-wrapper">
+      <tx-button
+        text="Ok"
+        color="accept"
+        size="pop-up-small"
+        [disabled]="false"
+      ></tx-button>
+      <tx-button
+        text="Cancel"
+        color="cancel"
+        size="pop-up-small"
+        [disabled]="false"
+      ></tx-button>
+    </div>
   </div>
+  <!-- temporary content -->
 </div>
