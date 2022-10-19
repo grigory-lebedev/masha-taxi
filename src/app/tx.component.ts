@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { popupShowAnimation } from './shared/animations';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
   selector: 'tx-root',
   templateUrl: './tx.component.html',
   styleUrls: ['./tx.component.scss'],
-  animations: [popupShowAnimation]
+  animations: []
 })
 export class AppComponent {
   public title = 'masha-taxi';
   public isChecked: boolean = false;
-  public isPopupActive: boolean = false;
   public itemsPerPagesList = ['10', '20', '50'];
-  public clientName = "Ivan Ivanov";
 
   constructor(private notificationListService: NotificationListService) {}
 
@@ -50,13 +47,5 @@ export class AppComponent {
 
   public showErrorNotification() {
     this.notificationListService.showError('Your password is wrong.');
-  }
-
-  public showPopUp() {
-    this.isPopupActive = true;
-  }
-
-  public closePopUp(value: boolean) {
-    this.isPopupActive = value;
   }
 }

@@ -1,16 +1,19 @@
-.base-popup__wrapper {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.base-popup__close-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
-.base-popup__card {
-  background: #fff;
-  border-radius: 5px;
+:host::ng-deep {
+  .material-icons {
+    font-size: 35px;
+  }
+  .mat-icon {
+    width: 35px;
+  }
+  .mat-dialog-content {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
 }

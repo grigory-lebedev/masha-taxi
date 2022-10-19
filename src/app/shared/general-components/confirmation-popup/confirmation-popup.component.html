@@ -1,6 +1,8 @@
 <tx-base-popup>
   <div class="demo-popup-content">
-    <p class="demo-popup-content__text">{{ text }}</p>
+    <p class="demo-popup-content__text">
+      Are you sure you want to accept the offer from Ivan Ivanov?
+    </p>
     <div class="demo-popup-content__wrapper button-wrapper">
       <tx-button
         text="Ok"
@@ -13,7 +15,6 @@
         color="cancel"
         size="pop-up-small"
         [disabled]="false"
-        (click)="closePopUp()"
       ></tx-button>
     </div>
   </div>

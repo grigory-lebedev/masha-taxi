@@ -23,6 +23,9 @@ import { NotificationListComponent } from './shared/general-components/notificat
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
 import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
 import { ConfirmationPopUpComponent } from './shared/general-components/confirmation-popup/confirmation-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { OpenConfirmationPopupDirective } from './shared/general-components/confirmation-popup/open-confirmation-popup.directive';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { ConfirmationPopUpComponent } from './shared/general-components/confirma
     NotificationListComponent,
     NotificationItemComponent,
     BasePopUpComponent,
-    ConfirmationPopUpComponent
+    ConfirmationPopUpComponent,
+    OpenConfirmationPopupDirective
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,7 @@ import { ConfirmationPopUpComponent } from './shared/general-components/confirma
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     {
