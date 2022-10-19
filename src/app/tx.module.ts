@@ -27,7 +27,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { OpenConfirmationPopupDirective } from './shared/general-components/confirmation-popup/open-confirmation-popup.directive';
 import { SpinnerComponent } from './shared/general-components/spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { SpinnerState } from './store/states/spinner.state';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     MatMenuModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxsModule.forRoot([SpinnerState], { developmentMode: true }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [
     {
