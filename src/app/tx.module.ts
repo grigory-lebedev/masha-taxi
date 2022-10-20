@@ -29,7 +29,7 @@ import { SpinnerComponent } from './shared/general-components/spinner/spinner.co
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { SpinnerState } from './store/states/spinner.state';
+import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
 
 @NgModule({
   declarations: [

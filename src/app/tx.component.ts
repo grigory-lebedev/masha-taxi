@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
-import { HideSpinner, ShowSpinner } from './store/actions/spinner.actions';
+import { HideSpinner, ShowSpinner } from './shared/general-components/spinner/ngxs/spinner.actions';
 
 @Component({
   selector: 'tx-root',

@@ -7,12 +7,12 @@ import { ShowSpinner, HideSpinner } from '../ngxs/spinner.actions';
 })
 export class SpinnerState {
   @Action(ShowSpinner)
-  showSpinner({patchState}: StateContext<boolean>) {
-    patchState(true);
+  showSpinner({setState}: StateContext<boolean>) {
+    setState(true);
   } 
 
   @Action(HideSpinner)
-  hideSpinner({patchState}: StateContext<boolean>) {
-    patchState(false);
+  hideSpinner({setState}: StateContext<boolean>) {
+    setState(false);
   } 
 }
