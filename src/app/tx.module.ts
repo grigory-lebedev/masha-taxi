@@ -22,8 +22,14 @@ import { ButtonComponent } from './shared/general-components/button/button.compo
 import { NotificationListComponent } from './shared/general-components/notification/notification-list/notification-list.component';
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
 import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
-import { OpenPopupDirective } from './shared/general-components/base-popup/open-popup.directive';
+import { ConfirmationPopUpComponent } from './shared/general-components/confirmation-popup/confirmation-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { OpenConfirmationPopupDirective } from './shared/general-components/confirmation-popup/open-confirmation-popup.directive';
+import { SpinnerComponent } from './shared/general-components/spinner/spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NotificationListComponent,
     NotificationItemComponent,
     BasePopUpComponent,
-    OpenPopupDirective
+    ConfirmationPopUpComponent,
+    OpenConfirmationPopupDirective,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    NgxsModule.forRoot([SpinnerState], { developmentMode: true }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [
     {

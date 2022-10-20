@@ -19,8 +19,8 @@
   <tx-dropdown-menu [items]="itemsPerPagesList"></tx-dropdown-menu>
   
   <div class="button-demo">
-    <tx-button text="Order" color="primary" size="large" [disabled]=false openTempPopup></tx-button>
-    <tx-button text="Upload photo" color="action" size="large" [disabled]=false></tx-button>
+    <tx-button text="Order" color="primary" size="large" [disabled]=false openConfirmationPopup (confirmed)="showOrderConfirmed()"></tx-button>
+    <tx-button style="z-index: 1" text="Spinner" color="action" size="large" [disabled]=false (click)="toggleSpinnerMode()"></tx-button>
     <tx-button text="Accept" color="accept" size="small" [disabled]=false></tx-button>
     <tx-button text="Cancel" color="cancel" size="small" [disabled]=false></tx-button>
     <tx-button text="Ok" color="accept" size="pop-up-small" [disabled]=false></tx-button>
@@ -34,6 +34,8 @@
     <tx-button text="Error" color="cancel" size="small" [disabled]=false (click)="showErrorNotification()"></tx-button>
   </div>
   <tx-notification-list></tx-notification-list>
+
+  <tx-spinner></tx-spinner>
 </tx-page-wrapper>
 
 
