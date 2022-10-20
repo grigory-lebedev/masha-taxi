@@ -1,10 +1,13 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { SpinnerState } from './ngxs/spinner.state';
 
 @Component({
-    selector: 'tx-spinner',
-    templateUrl: './spinner.component.html',
-    styleUrls: ['./spinner.component.scss']
+  selector: 'tx-spinner',
+  templateUrl: './spinner.component.html',
+  styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent {
-    @Input() isLoading: boolean = false;
+    @Select(SpinnerState) isLoading$!: Observable<boolean>;
 }

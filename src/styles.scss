@@ -1,3 +1,4 @@
+@use "/src/app/shared/scss/colors.scss" as colors;
 @import "material-theme.scss";
 @import "./app/shared/scss/material-overrides/custom-select.scss";
 @import "./app/shared/scss/material-overrides/fonts.scss";
@@ -32,7 +33,7 @@ input[type="password"]::placeholder {
 }
 
 .cdk-overlay-dark-backdrop {
-  background: rgba(0, 0, 0, 0.8);
+  background: colors.$darkened-popup-background;
 }
 
 

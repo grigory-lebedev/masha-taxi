@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
-import { SpinnerState } from './store/states/spinner.state';
-import { Observable } from 'rxjs';
 import { HideSpinner, ShowSpinner } from './store/actions/spinner.actions';
 
 @Component({
@@ -13,7 +11,6 @@ import { HideSpinner, ShowSpinner } from './store/actions/spinner.actions';
   animations: []
 })
 export class AppComponent {
-  @Select(SpinnerState) isLoading!: Observable<boolean>;
   public title = 'masha-taxi';
   public isChecked: boolean = false;
   public isSpinnerDisplayed: boolean = false;
@@ -62,5 +59,9 @@ export class AppComponent {
       this.store.dispatch(new ShowSpinner());
     }
     this.isSpinnerDisplayed = !this.isSpinnerDisplayed;
+  }
+
+  public showOrderConfirmed() {
+    console.log('Order was confirmed');
   }
 }

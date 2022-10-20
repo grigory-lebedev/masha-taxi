@@ -1,3 +1,5 @@
+@use "../../scss/colors.scss" as colors;
+
 .spinner__wrapper {
   position: absolute;
   top: 0;
@@ -7,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: colors.$darkened-background;
 }
 
 :host::ng-deep {
