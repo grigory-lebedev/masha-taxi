@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ENotification } from './shared/enums/notification-type';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 
 @Component({
   selector: 'tx-root',
   templateUrl: './tx.component.html',
   styleUrls: ['./tx.component.scss'],
+  animations: []
 })
 export class AppComponent {
-  constructor(private notificationListService: NotificationListService) {}
-
   public title = 'masha-taxi';
-
   public isChecked: boolean = false;
-
   public itemsPerPagesList = ['10', '20', '50'];
+
+  constructor(private notificationListService: NotificationListService) {}
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),

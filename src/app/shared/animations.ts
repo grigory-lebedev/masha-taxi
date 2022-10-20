@@ -1,12 +1,24 @@
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  keyframes,
+  query,
+  sequence,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 export const showInOutAnimation = trigger('showInOut', [
-  state('finalState', style({
-    opacity: 1,
-    position: 'relative',
-    right: '0',
-    bottom: '0',
-  })),
+  state(
+    'finalState',
+    style({
+      opacity: 1,
+      position: 'relative',
+      right: '0',
+      bottom: '0',
+    })
+  ),
   //from nothing to somewhere
   transition('void => *', [
     style({
@@ -19,7 +31,8 @@ export const showInOutAnimation = trigger('showInOut', [
   ]),
   //into nothing
   transition('* => void', [
-    animate('1000ms',
+    animate(
+      '1000ms',
       keyframes([
         style({
           bottom: '*',
@@ -43,6 +56,26 @@ export const showInOutAnimation = trigger('showInOut', [
           offset: 1,
         }),
       ])
+    ),
+  ]),
+]);
+
+export const popupShowAnimation = trigger('popupShow', [
+  transition('void => *', [
+    style({
+      transition: 'opacity 500ms',
+      visibility: 'hidden',
+      opacity: '0',
+    }),
+    animate('300ms'),
+  ]),
+  transition('* => void', [
+    animate('200ms',
+      style({
+        transition: 'opacity 500ms',
+        visibility: 'hidden',
+        opacity: '0',
+      })
     ),
   ]),
 ]);

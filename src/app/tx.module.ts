@@ -21,6 +21,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ButtonComponent } from './shared/general-components/button/button.component';
 import { NotificationListComponent } from './shared/general-components/notification/notification-list/notification-list.component';
 import { NotificationItemComponent } from './shared/general-components/notification/notification-item/notification-item.component';
+import { BasePopUpComponent } from './shared/general-components/base-popup/base-popup.component';
+import { OpenPopupDirective } from './shared/general-components/base-popup/open-popup.directive';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { NotificationItemComponent } from './shared/general-components/notificat
     DropdownMenuComponent,
     ButtonComponent,
     NotificationListComponent,
-    NotificationItemComponent
+    NotificationItemComponent,
+    BasePopUpComponent,
+    OpenPopupDirective
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ import { NotificationItemComponent } from './shared/general-components/notificat
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     {

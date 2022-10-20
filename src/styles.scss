@@ -26,3 +26,11 @@ input[type="password"]::placeholder {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 27px;
 }
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
