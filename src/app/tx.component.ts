@@ -48,4 +48,8 @@ export class AppComponent {
   public showErrorNotification() {
     this.notificationListService.showError('Your password is wrong.');
   }
+
+  public showOrderConfirmed() {
+    console.log('Order was confirmed');
+  }
 }
