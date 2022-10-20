@@ -37,6 +37,7 @@
       line-height: 107px;
       color: colors.$primary;
       padding-left: 170px;
+      margin: 0;
     }
   }
 
@@ -46,7 +47,14 @@
   }
 
   .page-wrapper__content {
+    box-sizing: border-box;
+    position: relative;
     display: flex;
     justify-content: center;
+
+    //TODO: make height more flexible later
+    height: calc(100% - 159px);
+    //TODO: temporary for better demo
+    padding-top: 30px;
   }
 }

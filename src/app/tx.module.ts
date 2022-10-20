@@ -25,7 +25,11 @@ import { BasePopUpComponent } from './shared/general-components/base-popup/base-
 import { ConfirmationPopUpComponent } from './shared/general-components/confirmation-popup/confirmation-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { OpenConfirmationPopupDirective } from './shared/general-components/confirmation-popup/open-confirmation-popup.directive';
-
+import { SpinnerComponent } from './shared/general-components/spinner/spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { OpenConfirmationPopupDirective } from './shared/general-components/conf
     NotificationItemComponent,
     BasePopUpComponent,
     ConfirmationPopUpComponent,
-    OpenConfirmationPopupDirective
+    OpenConfirmationPopupDirective,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ import { OpenConfirmationPopupDirective } from './shared/general-components/conf
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    NgxsModule.forRoot([SpinnerState], { developmentMode: true }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [
     {

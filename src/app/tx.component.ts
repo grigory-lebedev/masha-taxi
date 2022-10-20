@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngxs/store';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
+import { HideSpinner, ShowSpinner } from './shared/general-components/spinner/ngxs/spinner.actions';
 
 @Component({
   selector: 'tx-root',
@@ -11,9 +13,10 @@ import { NotificationListService } from './shared/general-components/notificatio
 export class AppComponent {
   public title = 'masha-taxi';
   public isChecked: boolean = false;
+  public isSpinnerDisplayed: boolean = false;
   public itemsPerPagesList = ['10', '20', '50'];
 
-  constructor(private notificationListService: NotificationListService) {}
+  constructor(private notificationListService: NotificationListService, private store: Store) {}
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -47,6 +50,15 @@ export class AppComponent {
 
   public showErrorNotification() {
     this.notificationListService.showError('Your password is wrong.');
+  }
+
+  public toggleSpinnerMode() {
+    if (this.isSpinnerDisplayed) {
+      this.store.dispatch(new HideSpinner());
+    } else {
+      this.store.dispatch(new ShowSpinner());
+    }
+    this.isSpinnerDisplayed = !this.isSpinnerDisplayed;
   }
 
   public showOrderConfirmed() {
