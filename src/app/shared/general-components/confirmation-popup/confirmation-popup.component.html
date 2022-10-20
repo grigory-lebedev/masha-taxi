@@ -1,0 +1,23 @@
+<tx-base-popup>
+  <div class="demo-popup-content">
+    <p class="demo-popup-content__text">
+      Are you sure you want to accept the offer from Ivan Ivanov?
+    </p>
+    <div class="demo-popup-content__wrapper button-wrapper">
+      <tx-button
+        text="Ok"
+        color="accept"
+        size="pop-up-small"
+        [disabled]="false"
+        [mat-dialog-close]="true"
+      ></tx-button>
+      <tx-button
+        text="Cancel"
+        color="cancel"
+        size="pop-up-small"
+        [disabled]="false"
+        mat-dialog-close
+      ></tx-button>
+    </div>
+  </div>
+</tx-base-popup>
