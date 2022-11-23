@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
+import { carColors, roles } from './shared/constants';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 import { HideSpinner, ShowSpinner } from './shared/general-components/spinner/ngxs/spinner.actions';
+import { ISelect } from './shared/models/select';
 
 @Component({
   selector: 'tx-root',
@@ -15,19 +17,32 @@ export class AppComponent {
   public isChecked: boolean = false;
   public isSpinnerDisplayed: boolean = false;
   public itemsPerPagesList = ['10', '20', '50'];
+  public selectRoles = roles;
+  public selectColors = carColors;
+
+  public selectItems: ISelect[] = [];
 
   constructor(private notificationListService: NotificationListService, private store: Store) {}
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl(
-      { value: '', disabled: false },
-      Validators.required
-    ),
-    name: new FormControl('', Validators.required),
-    role: new FormControl('', Validators.required),
+    password: new FormControl({ value: '', disabled: false }, Validators.required),
+    confirmPassword: new FormControl({ value: '', disabled: false }, Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    role: new FormControl(roles, Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
+
+    make: new FormControl('', Validators.required),
+    model: new FormControl('', Validators.required),
+    year: new FormControl('', Validators.required),
+    color: new FormControl(carColors, Validators.required),
   });
+
+
+  public handleError() {
+
+  }
 
   public onSignIn(): void {
     console.log(this.demonstrationForm.controls['isLoggedIn']);

@@ -1,20 +1,44 @@
 <tx-page-wrapper>
-  <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn() ">
-    <tx-form-input>
-      <input matInput type="email" placeholder="Email" formControlName="email">
-    </tx-form-input>
-    <tx-form-input>
-      <input matInput type="password" placeholder="Password" formControlName="password">
-    </tx-form-input>
-    <tx-form-input>
-      <input matInput placeholder="FirstName" formControlName="name">
-    </tx-form-input>
-  
-    <tx-role-select placeholder="Role" formControlName="role"></tx-role-select>
-  
-    <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
-  
-    <tx-form-button type="submit" text="BUTTON" [disabled]=!demonstrationForm.valid></tx-form-button>
+  <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
+    <section class="form_up">
+      <section class="form_up form_up_left">
+        <tx-form-input>
+          <input matInput type="email" placeholder="Email" formControlName="email">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput placeholder="FirstName" formControlName="firstName">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput placeholder="LastName" formControlName="lastName">
+        </tx-form-input>
+        <tx-form-select placeholder="Role" formControlName="role" [selectItems]=selectRoles></tx-form-select>
+      </section>
+      <section class="form_up form_up_right">
+        <h1 class="form_up_right__title">Car</h1>
+        <tx-form-input>
+          <input matInput placeholder="Make" formControlName="make">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput placeholder="Model" formControlName="model">
+        </tx-form-input>
+        <tx-form-input>
+          <input matInput placeholder="Year" formControlName="year">
+        </tx-form-input>
+        <tx-form-select placeholder="Color" formControlName="color" [selectItems]=selectColors></tx-form-select>
+      </section>
+    </section>
+
+    <section class="form_down">
+      <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
+      <tx-form-button class="form_down__button" type="submit" text="REGISTER" [disabled]=!demonstrationForm.valid></tx-form-button>
+    </section>
+
   </form>
   <tx-dropdown-menu [items]="itemsPerPagesList"></tx-dropdown-menu>
   

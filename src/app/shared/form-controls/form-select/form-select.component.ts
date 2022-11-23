@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
@@ -6,17 +6,17 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
-import { roles } from 'src/app/shared/constants';
-import { IRole } from './../../../shared/models/language';
+import { carColors, roles } from '../../constants';
+import { ISelect } from '../../models/select';
 
 @Component({
-  selector: 'tx-role-select',
-  templateUrl: './role-select.component.html',
-  styleUrls: ['./role-select.component.scss'],
+  selector: 'tx-form-select',
+  templateUrl: './form-select.component.html',
+  styleUrls: ['./form-select.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => RoleSelectComponent),
+      useExisting: forwardRef(() => FormSelectComponent),
       multi: true,
     },
     {
@@ -25,10 +25,10 @@ import { IRole } from './../../../shared/models/language';
     },
   ],
 })
-export class RoleSelectComponent implements ControlValueAccessor {
+export class FormSelectComponent implements ControlValueAccessor {
+  @Input() placeholder: string = ''; 
+  @Input() selectItems: ISelect[] = [];
   public formControl: FormControl = new FormControl({}, [Validators.required]);
-
-  public selectItems: IRole[] = roles;
 
   public isDisabled: boolean = false;
 

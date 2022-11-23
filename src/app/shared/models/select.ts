@@ -1,4 +1,4 @@
-export interface IRole {
+export interface ISelect {
   id: number;
   value: string;
 }
