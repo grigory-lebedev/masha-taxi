@@ -8,6 +8,7 @@ import {
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
 import { carColors, roles } from '../../constants';
 import { ISelect } from '../../models/select';
+import { setErrorValidationMessage } from '../../validators/error-messages';
 
 @Component({
   selector: 'tx-form-select',
@@ -33,10 +34,7 @@ export class FormSelectComponent implements ControlValueAccessor {
   public isDisabled: boolean = false;
 
   public getErrorMessage(): string {
-    if (this.formControl.hasError('required')) {
-      return `${this.placeholder} is a required field!`;
-    }
-    return "";
+    return setErrorValidationMessage(this.formControl!, this.placeholder);
   }
 
   public onTouched = (): void => {};

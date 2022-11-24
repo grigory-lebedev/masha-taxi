@@ -9,6 +9,7 @@ import {
   MatFormField,
   MatFormFieldControl,
 } from '@angular/material/form-field';
+import { setErrorValidationMessage } from '../../validators/error-messages';
 import { EInputType } from './../../enums/input-type';
 
 @Component({
@@ -43,23 +44,7 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
   }
 
   public getErrorMessage(): string {
-    if (this.input.ngControl?.control?.hasError('required')) {
-      return `${this.input.placeholder} is a required field!`;
-    }
-    if (this.input.ngControl?.control?.hasError('email')) {
-      return `${this.input.placeholder} isn't valid!`;
-    }
-    if(this.input.ngControl?.control?.hasError('maxlength')) {
-      let requiredLength = this.input.ngControl?.control?.errors?.['maxlength'].requiredLength;
-      return `${this.input.placeholder} should be less than ${requiredLength} symbols!`;
-    }
-    if(this.input.ngControl?.control?.hasError('carYearLimit')) {
-      return `${this.input.placeholder} isn't valid!`;
-    }
-    if(this.input.ngControl?.control?.hasError('noPasswordMatch')) {
-      return `${this.input.placeholder} doesn't match with Password!`;
-    }
-    return "";
+    return setErrorValidationMessage(this.input.ngControl?.control!, this.input.placeholder);
   }
 
   public isPasswordType(): boolean {

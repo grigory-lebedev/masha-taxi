@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { carColors, roles } from './shared/constants';
-import { CustomValidator } from './shared/custom-validator';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 import { HideSpinner, ShowSpinner } from './shared/general-components/spinner/ngxs/spinner.actions';
 import { ISelect } from './shared/models/select';
+import { CarYearValidator } from './shared/validators/car-year.validator';
+import { setErrorValidationMessage } from './shared/validators/error-messages';
+import { PasswordMatchValidator } from './shared/validators/password-match.validator';
 
 @Component({
   selector: 'tx-root',
@@ -36,15 +38,20 @@ export class AppComponent {
 
     make: new FormControl('', [Validators.required, Validators.maxLength(20)]),
     model: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-    year: new FormControl('', [Validators.required, CustomValidator.yearLimitValidator()]),
+    year: new FormControl('', [Validators.required, CarYearValidator.getCarYearError()]),
     color: new FormControl('', Validators.required),
-  }, CustomValidator.passwordMatchValidator);
+  }, PasswordMatchValidator.getPasswordMatchError);
 
   public onSignIn(): void {
     console.log(`Is form valid - ${this.demonstrationForm.valid}`);
     if (!this.demonstrationForm.valid) {
       return;
     }
+  }
+
+  //TODO: for open passwords
+  public getErrorMessage(control: AbstractControl, placeholder: string): string {
+    return setErrorValidationMessage(control, placeholder);
   }
 
   public onChangeEvent(event: any) {
