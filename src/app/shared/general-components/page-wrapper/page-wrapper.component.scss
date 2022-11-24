@@ -7,10 +7,10 @@
       rgba(84, 55, 55, 0) 102.4%
     ),
     url(./../../../../assets/picture.jfif);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
 
   .page-wrapper__header {
     font-family: "Rasa";

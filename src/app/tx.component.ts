@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { carColors, roles } from './shared/constants';
+import { CustomValidator } from './shared/custom-validator';
 import { NotificationListService } from './shared/general-components/notification/service/notification.service';
 import { HideSpinner, ShowSpinner } from './shared/general-components/spinner/ngxs/spinner.actions';
 import { ISelect } from './shared/models/select';
@@ -35,9 +36,9 @@ export class AppComponent {
 
     make: new FormControl('', [Validators.required, Validators.maxLength(20)]),
     model: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-    year: new FormControl('', [Validators.required]),
+    year: new FormControl('', [Validators.required, CustomValidator.yearLimitValidator()]),
     color: new FormControl('', Validators.required),
-  });
+  }, CustomValidator.passwordMatchValidator);
 
   public onSignIn(): void {
     console.log(`Is form valid - ${this.demonstrationForm.valid}`);

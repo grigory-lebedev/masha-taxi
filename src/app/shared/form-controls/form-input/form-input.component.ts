@@ -53,6 +53,12 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
       let requiredLength = this.input.ngControl?.control?.errors?.['maxlength'].requiredLength;
       return `${this.input.placeholder} should be less than ${requiredLength} symbols!`;
     }
+    if(this.input.ngControl?.control?.hasError('carYearLimit')) {
+      return `${this.input.placeholder} isn't valid!`;
+    }
+    if(this.input.ngControl?.control?.hasError('noPasswordMatch')) {
+      return `${this.input.placeholder} doesn't match with Password!`;
+    }
     return "";
   }
 
