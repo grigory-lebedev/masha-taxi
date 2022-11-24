@@ -42,6 +42,20 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
       : EInputType.text;
   }
 
+  public getErrorMessage(): string {
+    if (this.input.ngControl?.control?.hasError('required')) {
+      return `${this.input.placeholder} is a required field!`;
+    }
+    if (this.input.ngControl?.control?.hasError('email')) {
+      return `${this.input.placeholder} isn't valid!`;
+    }
+    if(this.input.ngControl?.control?.hasError('maxlength')) {
+      let requiredLength = this.input.ngControl?.control?.errors?.['maxlength'].requiredLength;
+      return `${this.input.placeholder} should be less than ${requiredLength} symbols!`;
+    }
+    return "";
+  }
+
   public isPasswordType(): boolean {
     return this.inputType === EInputType.password;
   }

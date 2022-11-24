@@ -26,26 +26,21 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl({ value: '', disabled: false }, Validators.required),
-    confirmPassword: new FormControl({ value: '', disabled: false }, Validators.required),
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    role: new FormControl(roles, Validators.required),
+    password: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
+    confirmPassword: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
+    firstName: new FormControl('',  [Validators.required, Validators.maxLength(20)]),
+    lastName: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
 
-    make: new FormControl('', Validators.required),
-    model: new FormControl('', Validators.required),
-    year: new FormControl('', Validators.required),
-    color: new FormControl(carColors, Validators.required),
+    make: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    model: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    year: new FormControl('', [Validators.required]),
+    color: new FormControl('', Validators.required),
   });
 
-
-  public handleError() {
-
-  }
-
   public onSignIn(): void {
-    console.log(this.demonstrationForm.controls['isLoggedIn']);
+    console.log(`Is form valid - ${this.demonstrationForm.valid}`);
     if (!this.demonstrationForm.valid) {
       return;
     }

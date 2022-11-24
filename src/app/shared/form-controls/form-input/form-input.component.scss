@@ -77,6 +77,14 @@
     .mat-form-field-label {
     transform: translateY(-1.3em) scale(0.75);
   }
+
+  .mat-form-field-subscript-wrapper {
+    position: relative;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0; 
+  }
 }
 
 //TODO: path to label to fix eye icon problem

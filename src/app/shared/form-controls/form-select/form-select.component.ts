@@ -32,6 +32,13 @@ export class FormSelectComponent implements ControlValueAccessor {
 
   public isDisabled: boolean = false;
 
+  public getErrorMessage(): string {
+    if (this.formControl.hasError('required')) {
+      return `${this.placeholder} is a required field!`;
+    }
+    return "";
+  }
+
   public onTouched = (): void => {};
 
   public writeValue(obj: string): void {
