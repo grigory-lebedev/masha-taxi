@@ -6,7 +6,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
-import { carColors, roles } from '../../constants';
 import { ISelect } from '../../models/select';
 import { setErrorValidationMessage } from '../../validators/error-messages';
 

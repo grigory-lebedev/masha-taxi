@@ -30,15 +30,15 @@ export class AppComponent {
 
   public demonstrationForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.pattern(this.regExpressionToCheckEmail)]),
-    password: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
-    confirmPassword: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
-    firstName: new FormControl('',  [Validators.required, Validators.maxLength(20)]),
-    lastName: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    password: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(20), Validators.minLength(6)]),
+    confirmPassword: new FormControl({ value: '', disabled: false }, [Validators.required]),
+    firstName: new FormControl('',  [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),
+    lastName: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),
     role: new FormControl('', Validators.required),
     isLoggedIn: new FormControl({ value: this.isChecked, disabled: false }),
 
-    make: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-    model: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+    make: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),
+    model: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),
     year: new FormControl('', [Validators.required, CarYearValidator.getCarYearError()]),
     color: new FormControl('', Validators.required),
   }, PasswordMatchValidator.getPasswordMatchError);
