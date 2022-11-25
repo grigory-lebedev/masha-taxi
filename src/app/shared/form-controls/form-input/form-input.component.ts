@@ -9,6 +9,7 @@ import {
   MatFormField,
   MatFormFieldControl,
 } from '@angular/material/form-field';
+import { setErrorValidationMessage } from '../../validators/error-messages';
 import { EInputType } from './../../enums/input-type';
 
 @Component({
@@ -40,6 +41,10 @@ export class FormInputComponent implements OnInit, AfterViewChecked {
     return !this.isPasswordVisible && this.inputType === EInputType.password
       ? EInputType.password
       : EInputType.text;
+  }
+
+  public getErrorMessage(): string {
+    return setErrorValidationMessage(this.input.ngControl?.control!, this.input.placeholder);
   }
 
   public isPasswordType(): boolean {

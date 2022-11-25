@@ -1,8 +1,6 @@
 import {
   animate,
   keyframes,
-  query,
-  sequence,
   state,
   style,
   transition,

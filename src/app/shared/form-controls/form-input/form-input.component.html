@@ -28,5 +28,6 @@
         >visibility</mat-icon
       >
     </button>
+    <mat-error *ngIf="input.ngControl?.control?.invalid">{{ getErrorMessage() }}</mat-error>
   </mat-form-field>
 </div>

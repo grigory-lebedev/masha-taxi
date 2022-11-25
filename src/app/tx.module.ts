@@ -14,7 +14,6 @@ import { FormInputComponent } from './shared/form-controls/form-input/form-input
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { FormButtonComponent } from './shared/form-controls/form-button/form-button.component';
-import { RoleSelectComponent } from './sign-up/component/role-select/role-select.component';
 import { PageWrapperComponent } from './shared/general-components/page-wrapper/page-wrapper.component';
 import { DropdownMenuComponent } from './shared/general-components/dropdown-menu/dropdown-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -30,12 +29,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
+import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormInputComponent,
-    RoleSelectComponent,
     FormButtonComponent,
     PageWrapperComponent,
     DropdownMenuComponent,
@@ -45,7 +44,8 @@ import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.s
     BasePopUpComponent,
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,
-    SpinnerComponent
+    SpinnerComponent,
+    FormSelectComponent
   ],
   imports: [
     BrowserModule,
