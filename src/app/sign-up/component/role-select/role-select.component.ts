@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
@@ -6,17 +6,17 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
-import { ISelect } from '../../models/select';
-import { setErrorValidationMessage } from '../../validators/error-messages';
+import { roles } from 'src/app/shared/constants';
+import { IRole } from 'src/app/shared/models/role';
 
 @Component({
-  selector: 'tx-form-select',
-  templateUrl: './form-select.component.html',
-  styleUrls: ['./form-select.component.scss'],
+  selector: 'tx-role-select',
+  templateUrl: './role-select.component.html',
+  styleUrls: ['./role-select.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormSelectComponent),
+      useExisting: forwardRef(() => RoleSelectComponent),
       multi: true,
     },
     {
@@ -25,16 +25,12 @@ import { setErrorValidationMessage } from '../../validators/error-messages';
     },
   ],
 })
-export class FormSelectComponent implements ControlValueAccessor {
-  @Input() placeholder: string = ''; 
-  @Input() selectItems: ISelect[] = [];
+export class RoleSelectComponent implements ControlValueAccessor {
   public formControl: FormControl = new FormControl({}, [Validators.required]);
 
-  public isDisabled: boolean = false;
+  public selectItems: IRole[] = roles;
 
-  public getErrorMessage(): string {
-    return setErrorValidationMessage(this.formControl!, this.placeholder);
-  }
+  public isDisabled: boolean = false;
 
   public onTouched = (): void => {};
 

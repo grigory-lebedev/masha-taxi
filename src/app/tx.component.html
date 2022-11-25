@@ -17,7 +17,7 @@
         <tx-form-input>
           <input matInput placeholder="LastName" formControlName="lastName">
         </tx-form-input>
-        <tx-form-select placeholder="Role" formControlName="role" [selectItems]=selectRoles></tx-form-select>
+        <tx-role-select placeholder="Role" formControlName="role"></tx-role-select>
       </section>
       <section class="form_up form_up_right">
         <h1 class="form_up_right__title">Car</h1>
@@ -30,7 +30,9 @@
         <tx-form-input>
           <input matInput placeholder="Year" formControlName="year">
         </tx-form-input>
-        <tx-form-select placeholder="Color" formControlName="color" [selectItems]=selectColors></tx-form-select>
+        <tx-form-input>
+          <input matInput placeholder="Color" formControlName="color">
+        </tx-form-input>
       </section>
     </section>
 

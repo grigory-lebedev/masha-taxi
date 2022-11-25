@@ -29,13 +29,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
-import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
+import { RoleSelectComponent } from './sign-up/component/role-select/role-select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormInputComponent,
-    FormSelectComponent,
     FormButtonComponent,
     PageWrapperComponent,
     DropdownMenuComponent,
@@ -45,7 +44,8 @@ import { FormSelectComponent } from './shared/form-controls/form-select/form-sel
     BasePopUpComponent,
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,
-    SpinnerComponent
+    SpinnerComponent,
+    RoleSelectComponent
   ],
   imports: [
     BrowserModule,
