@@ -22,13 +22,14 @@ export class AppComponent {
   public itemsPerPagesList = ['10', '20', '50'];
   public selectRoles = roles;
   public selectColors = carColors;
+  public regExpressionToCheckEmail: string = `^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`;
 
   public selectItems: ISelect[] = [];
 
   constructor(private notificationListService: NotificationListService, private store: Store) {}
 
   public demonstrationForm: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.pattern(this.regExpressionToCheckEmail)]),
     password: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
     confirmPassword: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.maxLength(10)]),
     firstName: new FormControl('',  [Validators.required, Validators.maxLength(20)]),

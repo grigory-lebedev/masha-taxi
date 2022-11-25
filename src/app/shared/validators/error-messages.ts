@@ -4,7 +4,7 @@ export function setErrorValidationMessage(control: AbstractControl, placeholder:
   if (control.hasError('required')) {
     return `${placeholder} is a required field!`;
   }
-  if (control.hasError('email')) {
+  if (control.hasError('pattern')) {
     return `${placeholder} isn't valid!`;
   }
   if (control.hasError('maxlength')) {
