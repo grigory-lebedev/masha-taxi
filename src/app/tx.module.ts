@@ -29,7 +29,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
-import { RoleSelectComponent } from './sign-up/component/role-select/role-select.component';
+import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { RoleSelectComponent } from './sign-up/component/role-select/role-select
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,
     SpinnerComponent,
-    RoleSelectComponent
+    FormSelectComponent
   ],
   imports: [
     BrowserModule,
