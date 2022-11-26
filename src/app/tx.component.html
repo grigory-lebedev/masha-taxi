@@ -1,5 +1,5 @@
 <tx-page-wrapper>
-  <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
+  <!-- <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
     <section class="form_up">
       <section class="form_up form_up_left">
         <tx-form-input>
@@ -58,8 +58,9 @@
     <tx-button text="Error" color="cancel" size="small" [disabled]=false (click)="showErrorNotification()"></tx-button>
   </div>
   <tx-notification-list></tx-notification-list>
-
-  <tx-spinner></tx-spinner>
+  <tx-spinner></tx-spinner> -->
+  
+  <router-outlet></router-outlet>
 </tx-page-wrapper>
 
 

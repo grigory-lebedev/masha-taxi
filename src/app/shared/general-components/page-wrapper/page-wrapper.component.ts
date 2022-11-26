@@ -7,6 +7,6 @@ import { languages } from '../../constants';
   styleUrls: ['./page-wrapper.component.scss'],
 })
 export class PageWrapperComponent {
-  public isLoggedIn: boolean = true;
+  public isLoggedIn: boolean = false;
   public languageList = languages;
 }

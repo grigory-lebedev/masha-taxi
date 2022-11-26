@@ -30,6 +30,9 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
 import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
+import { SignInComponent } from './sign-in/component/sign-in.component';
+import { SignUpComponent } from './sign-up/component/sign-up.component';
+import { TxRoutingModule } from './tx-routing.module';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { FormSelectComponent } from './shared/form-controls/form-select/form-sel
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,
     SpinnerComponent,
-    FormSelectComponent
+    FormSelectComponent,
+
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,7 @@ import { FormSelectComponent } from './shared/form-controls/form-select/form-sel
     MatProgressSpinnerModule,
     NgxsModule.forRoot([SpinnerState], { developmentMode: true }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
+    TxRoutingModule
   ],
   providers: [
     {
