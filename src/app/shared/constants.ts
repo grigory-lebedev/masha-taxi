@@ -18,3 +18,5 @@ export const languages = [
   ELanguageListItem.russian,
   ELanguageListItem.german,
 ];
+
+export const regExpressionToCheckEmail: string = `^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`;

@@ -33,6 +33,7 @@ import { FormSelectComponent } from './shared/form-controls/form-select/form-sel
 import { SignInComponent } from './sign-in/component/sign-in.component';
 import { SignUpComponent } from './sign-up/component/sign-up.component';
 import { TxRoutingModule } from './tx-routing.module';
+import { ResetPasswordComponent } from './sign-in/component/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,9 @@ import { TxRoutingModule } from './tx-routing.module';
     FormSelectComponent,
 
     SignInComponent,
+    ResetPasswordComponent,
+
+    
     SignUpComponent
   ],
   imports: [

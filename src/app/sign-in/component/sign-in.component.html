@@ -1,1 +1,48 @@
-<h1>Sign-in</h1>
+<div class="sign-in-form__wrapper">
+  <h1 class="sign-in-form__title">Sign In</h1>
+  <form
+    class="sign-in-form"
+    name="signInForm"
+    [formGroup]="signInForm"
+    (ngSubmit)="onSignIn()"
+  >
+    <section class="sign-in-form__input-fields">
+      <tx-form-input>
+        <input
+          matInput
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </tx-form-input>
+      <tx-form-input>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </tx-form-input>
+    </section>
+    <mat-checkbox
+      class="sign-in-form__checkbox"
+      formControlName="isLoggedIn"
+      (change)="onChangeEvent($event)"
+      >Keep me logged in</mat-checkbox
+    >
+    <tx-form-button
+      class="sign-in-form__button"
+      type="submit"
+      text="LOGIN"
+      [disabled]="!signInForm.valid"
+    ></tx-form-button>
+    <section class="sign-in-form__links">
+      <a routerLink="/reset-password-form" class="sign-in-form__link">Forgot password?</a>
+      <a routerLink="/sign-up" class="sign-in-form__link"
+        >I don’t have an account</a
+      >
+    </section>
+  </form>
+  <router-outlet></router-outlet>
+  <tx-notification-list></tx-notification-list>
+</div>
