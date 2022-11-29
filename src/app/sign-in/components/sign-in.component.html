@@ -37,12 +37,10 @@
       [disabled]="!signInForm.valid"
     ></tx-form-button>
     <section class="sign-in-form__links">
-      <a routerLink="/reset-password-form" class="sign-in-form__link">Forgot password?</a>
-      <a routerLink="/sign-up" class="sign-in-form__link"
-        >I don’t have an account</a
-      >
+      <a routerLink="" class="sign-in-form__link" (click)="isForgotPasswordFormVisible=!isForgotPasswordFormVisible">Forgot password?</a>
+      <a routerLink="/sign-up" class="sign-in-form__link">I don’t have an account</a>
     </section>
   </form>
-  <router-outlet></router-outlet>
+  <tx-reset-password-form *ngIf="isForgotPasswordFormVisible"></tx-reset-password-form>
   <tx-notification-list></tx-notification-list>
 </div>

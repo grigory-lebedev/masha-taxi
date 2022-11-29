@@ -16,6 +16,7 @@ import { SignInState } from '../ngxs/states/sign-in.state';
 export class SignInComponent {
   public isChecked: boolean = false;
   @Select(SignInState.getSignInResponse) isSignedIn$!: Observable<ISignInResponse>;
+  public isForgotPasswordFormVisible: boolean = false; //TODO: temporary
   public signInForm: FormGroup = new FormGroup(
     {
       email: new FormControl('', [

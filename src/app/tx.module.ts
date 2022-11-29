@@ -30,10 +30,10 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { SpinnerState } from './shared/general-components/spinner/ngxs/spinner.state';
 import { FormSelectComponent } from './shared/form-controls/form-select/form-select.component';
-import { SignInComponent } from './sign-in/component/sign-in.component';
+import { SignInComponent } from './sign-in/components/sign-in.component';
 import { SignUpComponent } from './sign-up/component/sign-up.component';
 import { TxRoutingModule } from './tx-routing.module';
-import { ResetPasswordComponent } from './sign-in/component/reset-password/reset-password.component';
+import { ResetPasswordComponent } from './sign-in/components/reset-password/reset-password.component';
 import { SignInState } from './sign-in/ngxs/states/sign-in.state';
 
 @NgModule({
@@ -55,8 +55,7 @@ import { SignInState } from './sign-in/ngxs/states/sign-in.state';
     SignInComponent,
     ResetPasswordComponent,
 
-
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +72,7 @@ import { SignInState } from './sign-in/ngxs/states/sign-in.state';
     MatProgressSpinnerModule,
     NgxsModule.forRoot([SpinnerState, SignInState], { developmentMode: true }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    TxRoutingModule
+    TxRoutingModule,
   ],
   providers: [
     {
