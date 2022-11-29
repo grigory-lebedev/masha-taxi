@@ -1,18 +1,21 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
+import { ISignInResponse } from 'src/app/shared/models/signInResponse';
 import { PasswordMatchValidator } from 'src/app/shared/validators/password-match.validator';
-import { SignInService } from '../service/sign-in.service';
+import { SignIn } from '../ngxs/actions/sign-in.actions';
+import { SignInState } from '../ngxs/states/sign-in.state';
 
 @Component({
   selector: 'tx-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })
-export class SignInComponent implements OnDestroy {
+export class SignInComponent {
   public isChecked: boolean = false;
-  public loginResponseSubscription$!: Subscription;
+  @Select(SignInState.getSignInResponse) isSignedIn$!: Observable<ISignInResponse>;
   public signInForm: FormGroup = new FormGroup(
     {
       email: new FormControl('', [
@@ -29,31 +32,18 @@ export class SignInComponent implements OnDestroy {
     PasswordMatchValidator.getPasswordMatchError
   );
 
-  constructor(private signInService: SignInService) {}
+  constructor(private store: Store) {}
 
   public onSignIn(): void {
-    if (this.signInForm.valid) {
-      this.loginResponseSubscription$ = this.signInService
-        .getToken(
-          this.signInForm.controls['email'].value,
-          this.signInForm.controls['password'].value
-        )
-        .subscribe({
-          next(response) {
-            console.log('Login Response from Server: ', response);
-          },
-          error(error) {
-            console.log('Error Getting Data: ', error);
-          },
-        });
-    }
+    let email = this.signInForm.controls['email'].value;
+    let password = this.signInForm.controls['password'].value;
+    this.store.dispatch(new SignIn({ email, password }));
+    this.isSignedIn$.subscribe({
+      next: (res) => console.log(res),
+    });
   }
 
   public onChangeEvent(event: any) {
     this.isChecked = !this.isChecked;
-  }
-
-  ngOnDestroy(): void {
-    this.loginResponseSubscription$.unsubscribe();
   }
 }

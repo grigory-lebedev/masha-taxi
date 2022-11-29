@@ -34,6 +34,7 @@ import { SignInComponent } from './sign-in/component/sign-in.component';
 import { SignUpComponent } from './sign-up/component/sign-up.component';
 import { TxRoutingModule } from './tx-routing.module';
 import { ResetPasswordComponent } from './sign-in/component/reset-password/reset-password.component';
+import { SignInState } from './sign-in/ngxs/states/sign-in.state';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { ResetPasswordComponent } from './sign-in/component/reset-password/reset
     SignInComponent,
     ResetPasswordComponent,
 
-    
+
     SignUpComponent
   ],
   imports: [
@@ -70,7 +71,7 @@ import { ResetPasswordComponent } from './sign-in/component/reset-password/reset
     MatMenuModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    NgxsModule.forRoot([SpinnerState], { developmentMode: true }),
+    NgxsModule.forRoot([SpinnerState, SignInState], { developmentMode: true }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     TxRoutingModule
   ],
