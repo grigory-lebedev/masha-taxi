@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
+
 import { SpinnerState } from './ngxs/spinner.state';
 
 @Component({

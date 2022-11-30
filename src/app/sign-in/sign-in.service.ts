@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+
 import { delay, Observable, of } from 'rxjs';
-import { ISignInRequest } from 'src/app/shared/models/signInRequest';
-import { ISignInResponse } from 'src/app/shared/models/signInResponse';
+import { IAuthDataState } from 'src/app/sign-in/authDataState.model';
 
 const mockServerLoginResponse = {
   refreshToken: 'mockRefreshToken',
@@ -13,7 +13,7 @@ const mockServerLoginResponse = {
   providedIn: 'root',
 })
 export class SignInService {
-  public getToken({email, password}: ISignInRequest): Observable<ISignInResponse> {
+  public signIn(email: string, password: string): Observable<IAuthDataState> {
     return of(mockServerLoginResponse).pipe(delay(1000));
   }
 }

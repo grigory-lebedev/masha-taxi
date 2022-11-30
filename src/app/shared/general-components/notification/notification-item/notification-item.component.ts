@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { INotification } from 'src/app/shared/models/notification';
-import { NotificationListService } from '../service/notification.service';
+
+import { INotification } from 'src/app/shared/notification.model';
+import { NotificationListService } from '../notification.service';
 
 @Component({
   selector: 'tx-notification-item',

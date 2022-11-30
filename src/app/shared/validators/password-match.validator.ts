@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 export class PasswordMatchValidator {
   static getPasswordMatchError(control: AbstractControl): ValidationErrors | null {

@@ -2,9 +2,8 @@
   <h1 class="sign-in-form__title">Sign In</h1>
   <form
     class="sign-in-form"
-    name="signInForm"
     [formGroup]="signInForm"
-    (ngSubmit)="onSignIn()"
+    (submit)="onSignIn()"
   >
     <section class="sign-in-form__input-fields">
       <tx-form-input>
@@ -13,6 +12,7 @@
           type="email"
           placeholder="Email"
           formControlName="email"
+          autocomplete="on"
         />
       </tx-form-input>
       <tx-form-input>
@@ -21,15 +21,11 @@
           type="password"
           placeholder="Password"
           formControlName="password"
+          autocomplete="on"
         />
       </tx-form-input>
     </section>
-    <mat-checkbox
-      class="sign-in-form__checkbox"
-      formControlName="isLoggedIn"
-      (change)="onChangeEvent($event)"
-      >Keep me logged in</mat-checkbox
-    >
+    <mat-checkbox class="sign-in-form__checkbox" formControlName="isLoggedIn">Keep me logged in</mat-checkbox>
     <tx-form-button
       class="sign-in-form__button"
       type="submit"
@@ -37,10 +33,14 @@
       [disabled]="!signInForm.valid"
     ></tx-form-button>
     <section class="sign-in-form__links">
-      <a routerLink="" class="sign-in-form__link" (click)="isForgotPasswordFormVisible=!isForgotPasswordFormVisible">Forgot password?</a>
+      <a
+        routerLink=""
+        class="sign-in-form__link"
+        (click)="isForgotPasswordFormVisible = !isForgotPasswordFormVisible"
+        >Forgot password?</a
+      >
       <a routerLink="/sign-up" class="sign-in-form__link">I don’t have an account</a>
     </section>
   </form>
   <tx-reset-password-form *ngIf="isForgotPasswordFormVisible"></tx-reset-password-form>
-  <tx-notification-list></tx-notification-list>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { showInOutAnimation } from 'src/app/shared/animations';
-import { INotification } from 'src/app/shared/models/notification';
-import { NotificationListService } from '../service/notification.service';
+import { INotification } from 'src/app/shared/notification.model';
+import { NotificationListService } from '../notification.service';
 
 @Component({
   selector: 'tx-notification-list',
@@ -11,7 +12,7 @@ import { NotificationListService } from '../service/notification.service';
 })
 export class NotificationListComponent implements OnInit {
   public notificationList: INotification[] = [];
-  public animationState: string = "finalState";
+  public animationState: string = 'finalState';
   constructor(private notificationService: NotificationListService) {}
 
   ngOnInit() {

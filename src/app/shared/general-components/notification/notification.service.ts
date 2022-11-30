@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { INotification } from 'src/app/shared/models/notification';
-import { ENotification } from 'src/app/shared/enums/notification-type';
+
 import { v4 as uuidv4 } from 'uuid';
+
+import { INotification } from 'src/app/shared/notification.model';
+import { ENotification } from 'src/app/shared/enums/notification-type';
 
 @Injectable({
   providedIn: 'root',
@@ -22,18 +24,23 @@ export class NotificationListService {
   }
 
   private addNotification(incomingMessage: string, incomingType: string) {
-    let newNotification = { id: uuidv4(), message: incomingMessage, type: incomingType }
+    let newNotification = {
+      id: uuidv4(),
+      message: incomingMessage,
+      type: incomingType,
+    };
     if (this.notificationList.length < 4) {
       this.notificationList.push(newNotification);
-    }
-    else {
+    } else {
       this.notificationList.shift();
       this.notificationList.push(newNotification);
     }
   }
 
-  public removeNotificationById(notificationId: string){
-    const notificationToBeRemoved = this.notificationList.findIndex((obj) => obj.id === notificationId);
+  public removeNotificationById(notificationId: string) {
+    const notificationToBeRemoved = this.notificationList.findIndex(
+      (obj) => obj.id === notificationId
+    );
     this.notificationList.splice(notificationToBeRemoved, 1);
   }
 }

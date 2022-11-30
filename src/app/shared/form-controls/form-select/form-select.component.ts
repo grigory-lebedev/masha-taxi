@@ -1,10 +1,6 @@
 import { Component, forwardRef, Input } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  Validators,
-} from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
 import { setErrorValidationMessage } from '../../validators/error-messages';
 
