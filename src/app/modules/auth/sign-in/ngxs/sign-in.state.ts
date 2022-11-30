@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { map } from 'rxjs';
-import { IAuthData } from 'src/app/sign-in/authData.model';
 
-import { SignInService } from '../sign-in.service';
+import { SignInService } from '../../auth.service';
+import { IAuthData } from '../../auth.model';
 import { SignIn } from './sign-in.actions';
 
 const signInStatusStateDefaults: IAuthData = {
