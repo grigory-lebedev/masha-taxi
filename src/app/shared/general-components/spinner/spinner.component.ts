@@ -11,5 +11,5 @@ import { SpinnerState } from './ngxs/spinner.state';
   styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent {
-  @Select(SpinnerState) isLoading$!: Observable<boolean>;
+  @Select(SpinnerState.isVisible) isLoading$!: Observable<boolean>;
 }

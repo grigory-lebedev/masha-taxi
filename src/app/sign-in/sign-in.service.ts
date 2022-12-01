@@ -1,19 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { delay, Observable, of } from 'rxjs';
-import { IAuthDataState } from 'src/app/sign-in/authDataState.model';
+import { Observable } from 'rxjs';
 
-const mockServerLoginResponse = {
-  refreshToken: 'mockRefreshToken',
-  accessToken: 'mockAccessToken',
-  expirationTime: 1,
-};
+import { IAuthData } from 'src/app/sign-in/authData.model';
+import { ENDPOINTS } from '../shared/endpoints';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignInService {
-  public signIn(email: string, password: string): Observable<IAuthDataState> {
-    return of(mockServerLoginResponse).pipe(delay(1000));
+  constructor(private http: HttpClient){}
+
+  public signIn(email: string, password: string): Observable<IAuthData> {
+    return this.http.post<IAuthData>(ENDPOINTS.login, {email, password});
   }
 }

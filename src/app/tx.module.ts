@@ -34,6 +34,7 @@ import { SignUpComponent } from './sign-up/component/sign-up.component';
 import { TxRoutingModule } from './tx-routing.module';
 import { ResetPasswordComponent } from './sign-in/components/reset-password/reset-password.component';
 import { SignInState } from './sign-in/ngxs/sign-in.state';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SignInState } from './sign-in/ngxs/sign-in.state';
     NgxsModule.forRoot([SpinnerState, SignInState], { developmentMode: true }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     TxRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     {
