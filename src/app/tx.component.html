@@ -1,5 +1,5 @@
 <tx-page-wrapper>
-  <form class="form" name="signInForm" [formGroup]="demonstrationForm" (ngSubmit)="onSignIn()">
+  <!-- <form class="form" [formGroup]="demonstrationForm" (submit)="onSignIn()">
     <section class="form_up">
       <section class="form_up form_up_left">
         <tx-form-input>
@@ -35,7 +35,7 @@
     </section>
 
     <section class="form_down">
-      <mat-checkbox formControlName="isLoggedIn" (change)="onChangeEvent($event)">Keep me logged in</mat-checkbox>
+      <mat-checkbox formControlName="isLoggedIn">Keep me logged in</mat-checkbox>
       <tx-form-button class="form_down__button" type="submit" text="REGISTER" [disabled]=!demonstrationForm.valid></tx-form-button>
     </section>
 
@@ -58,9 +58,9 @@
     <tx-button text="Error" color="cancel" size="small" [disabled]=false (click)="showErrorNotification()"></tx-button>
   </div>
   <tx-notification-list></tx-notification-list>
-
-  <tx-spinner></tx-spinner>
+  <tx-spinner></tx-spinner> -->
+  
+  <router-outlet></router-outlet>
 </tx-page-wrapper>
-
-
-
+<tx-notification-list></tx-notification-list>
+<tx-spinner></tx-spinner>

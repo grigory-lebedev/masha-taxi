@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
+
 import { SpinnerState } from './ngxs/spinner.state';
 
 @Component({
@@ -9,5 +11,5 @@ import { SpinnerState } from './ngxs/spinner.state';
   styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent {
-    @Select(SpinnerState) isLoading$!: Observable<boolean>;
+  @Select(SpinnerState.isVisible) isLoading$!: Observable<boolean>;
 }

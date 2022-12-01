@@ -1,18 +1,37 @@
-import { State, Action, StateContext } from '@ngxs/store';
+import { Injectable } from '@angular/core';
+import { State, Action, StateContext, Selector } from '@ngxs/store';
+
 import { ShowSpinner, HideSpinner } from '../ngxs/spinner.actions';
 
-@State<boolean>({ 
+interface SpinnerStateModel {
+  isVisible: boolean;
+}
+
+@State<SpinnerStateModel>({ 
   name: 'spinner', 
-  defaults: false
+  defaults: {
+    isVisible: false
+  }
 })
+@Injectable()
 export class SpinnerState {
+
+  @Selector()
+  static isVisible(state: SpinnerStateModel) {
+    return state.isVisible;
+  }
+
   @Action(ShowSpinner)
-  showSpinner({setState}: StateContext<boolean>) {
-    setState(true);
-  } 
+  showSpinner({patchState}: StateContext<SpinnerStateModel>) {
+    patchState({
+      isVisible: true
+    });
+  }
 
   @Action(HideSpinner)
-  hideSpinner({setState}: StateContext<boolean>) {
-    setState(false);
+  hideSpinner({patchState}: StateContext<SpinnerStateModel>) {
+    patchState({
+      isVisible: false
+    });
   } 
 }

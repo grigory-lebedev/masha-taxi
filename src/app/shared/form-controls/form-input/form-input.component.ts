@@ -1,14 +1,7 @@
-import {
-  Component,
-  ContentChild,
-  ViewChild,
-  OnInit,
-  AfterViewChecked
-} from '@angular/core';
-import {
-  MatFormField,
-  MatFormFieldControl,
-} from '@angular/material/form-field';
+import { Component, ContentChild, ViewChild, OnInit, AfterViewChecked } from '@angular/core';
+
+import {MatFormField, MatFormFieldControl} from '@angular/material/form-field';
+
 import { setErrorValidationMessage } from '../../validators/error-messages';
 import { EInputType } from './../../enums/input-type';
 

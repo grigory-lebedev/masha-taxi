@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+
+import { Select } from '@ngxs/store';
+import { Observable, of } from 'rxjs';
+
+import { SignInState } from 'src/app/sign-in/ngxs/sign-in.state';
 import { languages } from '../../constants';
 
 @Component({
@@ -7,6 +12,7 @@ import { languages } from '../../constants';
   styleUrls: ['./page-wrapper.component.scss'],
 })
 export class PageWrapperComponent {
-  public isLoggedIn: boolean = true;
+  @Select(SignInState.getAccessToken) accessToken$!: Observable<string>;
+  public isLoggedIn: boolean = false;
   public languageList = languages;
 }
