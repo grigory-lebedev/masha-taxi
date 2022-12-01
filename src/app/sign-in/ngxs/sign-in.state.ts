@@ -4,8 +4,11 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs';
 import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
 
-import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
-import { IAuthData } from 'src/app/sign-in/authData.model';
+import {
+  HideSpinner,
+  ShowSpinner,
+} from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
+import { IAuthData } from 'src/app/sign-in/auth-data.model';
 import { SignInService } from '../sign-in.service';
 import { SignIn } from './sign-in.actions';
 
@@ -41,22 +44,23 @@ export class SignInState {
   ) {}
 
   @Action(SignIn)
-  public signIn({ patchState, dispatch }: StateContext<IAuthData>, { email, password }: SignIn) {
-
+  public signIn(
+    { patchState, dispatch }: StateContext<IAuthData>,
+    { email, password }: SignIn
+  ) {
     dispatch(new ShowSpinner());
-    return this.signInService.signIn(email, password)
-      .pipe(
-        tap({
-          next: (authData: IAuthData) => {
-            patchState({
-              ...authData
-            });
-          },
-          error: ({error: {message}}) => {
-            this.notificationService.showError(message);
-          },
-          finalize: () => dispatch(new HideSpinner())
-        })
-      );
+    return this.signInService.signIn(email, password).pipe(
+      tap({
+        next: (authData: IAuthData) => {
+          patchState({
+            ...authData,
+          });
+        },
+        error: ({ error: { message } }) => {
+          this.notificationService.showError(message);
+        },
+        finalize: () => dispatch(new HideSpinner()),
+      })
+    );
   }
 }
