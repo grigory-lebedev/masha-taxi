@@ -3,18 +3,16 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { environment } from 'src/environments/environment';
-import { IAuthData } from './auth.model';
+import { IAuthData } from 'src/app/sign-in/auth-data.model';
+import { ENDPOINTS } from '../shared/endpoints';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignInService {
-  private SIGN_IN_URL = environment.endpoints.signIn;
-
   constructor(private http: HttpClient) {}
 
   public signIn(email: string, password: string): Observable<IAuthData> {
-    return this.http.post<IAuthData>(this.SIGN_IN_URL, { email, password });
+    return this.http.post<IAuthData>(ENDPOINTS.login, { email, password });
   }
 }
