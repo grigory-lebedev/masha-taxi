@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { State, Action, StateContext, Selector } from '@ngxs/store';
-import { map } from 'rxjs';
-import { IAuthData } from 'src/app/sign-in/authData.model';
+import { tap } from 'rxjs';
+import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
 
+import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
+import { IAuthData } from 'src/app/sign-in/authData.model';
 import { SignInService } from '../sign-in.service';
 import { SignIn } from './sign-in.actions';
 
@@ -33,19 +35,28 @@ export class SignInState {
     return state.expirationTime;
   }
 
-  constructor(private signInService: SignInService) {}
+  constructor(
+    private signInService: SignInService,
+    private notificationService: NotificationListService
+  ) {}
 
   @Action(SignIn)
-  public signIn({ patchState }: StateContext<IAuthData>, action: SignIn) {
-    const { email, password } = action;
-    return this.signInService.signIn(email, password).pipe(
-      map((response) => {
-        patchState({
-          refreshToken: response.refreshToken,
-          accessToken: response.accessToken,
-          expirationTime: response.expirationTime,
-        });
-      })
-    );
+  public signIn({ patchState, dispatch }: StateContext<IAuthData>, { email, password }: SignIn) {
+
+    dispatch(new ShowSpinner());
+    return this.signInService.signIn(email, password)
+      .pipe(
+        tap({
+          next: (authData: IAuthData) => {
+            patchState({
+              ...authData
+            });
+          },
+          error: ({error: {message}}) => {
+            this.notificationService.showError(message);
+          },
+          finalize: () => dispatch(new HideSpinner())
+        })
+      );
   }
 }

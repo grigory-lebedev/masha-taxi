@@ -2,13 +2,9 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const baseApiUrl: string = 'https://young-dusk-13958.herokuapp.com';
-
 export const environment = {
   production: false,
-  endpoints: {
-    signIn: `${baseApiUrl}/login`,
-  },
+  baseApiUrl: 'https://young-dusk-13958.herokuapp.com'
 };
 
 /*
