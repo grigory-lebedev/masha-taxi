@@ -19,22 +19,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { SignInState } from './sign-in/ngxs/sign-in.state';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { FormControlsModule } from 'src/app/shared/form-controls/form-controls.module';
 
 @NgModule({
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatDialogModule,
-    MatProgressSpinnerModule,
+    MaterialModule,
+    FormControlsModule,
     SharedModule,
     RouterModule,
     NgxsModule.forFeature([SignInState]),
+
   ],
   declarations: [
     SignInComponent,

@@ -1,31 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
-import { AppComponent } from './tx.component';
+import { TaxiComponent } from './tx.component';
 import { TxRoutingModule } from './tx-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthModule } from './modules/auth/auth.module';
-import { SharedModule } from './shared/shared.module';
-
+import { NotificationModule } from './shared/general-components/notification/notification.module';
+import { FeatureModulesModule } from './shared/modules/feautre-modules.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    TaxiComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxsModule.forRoot([], { developmentMode: true }),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    TxRoutingModule,
     HttpClientModule,
-    SharedModule,
-    AuthModule
+    TxRoutingModule,
+    FeatureModulesModule,
+    NotificationModule
   ],
   providers: [
     {
@@ -33,6 +28,6 @@ import { SharedModule } from './shared/shared.module';
       useValue: { appearance: 'fill' },
     },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [TaxiComponent],
 })
 export class AppModule {}

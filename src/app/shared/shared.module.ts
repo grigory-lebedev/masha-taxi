@@ -18,15 +18,12 @@ import { FormInputComponent } from 'src/app/shared/form-controls/form-input/form
 import { PageWrapperComponent } from './general-components/page-wrapper/page-wrapper.component';
 import { DropdownMenuComponent } from './general-components/dropdown-menu/dropdown-menu.component';
 import { ButtonComponent } from './general-components/button/button.component';
-import { NotificationListComponent } from './general-components/notification/notification-list/notification-list.component';
-import { NotificationItemComponent } from './general-components/notification/notification-item/notification-item.component';
 import { BasePopUpComponent } from './general-components/base-popup/base-popup.component';
 import { ConfirmationPopUpComponent } from './general-components/confirmation-popup/confirmation-popup.component';
 import { OpenConfirmationPopupDirective } from './general-components/confirmation-popup/open-confirmation-popup.directive';
 import { SpinnerComponent } from './general-components/spinner/spinner.component';
 import { FormSelectComponent } from './form-controls/form-select/form-select.component';
 import { SpinnerState } from './general-components/spinner/ngxs/spinner.state';
-
 
 @NgModule({
   imports: [
@@ -49,8 +46,6 @@ import { SpinnerState } from './general-components/spinner/ngxs/spinner.state';
     PageWrapperComponent,
     DropdownMenuComponent,
     ButtonComponent,
-    NotificationListComponent,
-    NotificationItemComponent,
     BasePopUpComponent,
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,
@@ -64,8 +59,6 @@ import { SpinnerState } from './general-components/spinner/ngxs/spinner.state';
     PageWrapperComponent,
     DropdownMenuComponent,
     ButtonComponent,
-    NotificationListComponent,
-    NotificationItemComponent,
     BasePopUpComponent,
     ConfirmationPopUpComponent,
     OpenConfirmationPopupDirective,

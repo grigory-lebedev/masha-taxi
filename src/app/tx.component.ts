@@ -14,7 +14,7 @@ import { PasswordMatchValidator } from './shared/validators/password-match.valid
   templateUrl: './tx.component.html',
   styleUrls: ['./tx.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class TaxiComponent implements OnInit {
   public title = 'masha-taxi';
   public isSpinnerDisplayed: boolean = false;
   public itemsPerPagesList = ['10', '20', '50'];
