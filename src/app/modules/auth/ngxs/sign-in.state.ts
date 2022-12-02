@@ -2,14 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs';
-import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
 
-import {
-  HideSpinner,
-  ShowSpinner,
-} from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
-import { IAuthData } from 'src/app/sign-in/auth-data.model';
-import { SignInService } from '../sign-in.service';
+import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
+import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
+import { IAuthData } from '../auth-data.model';
+import { SignInService } from '../auth.service';
 import { SignIn } from './sign-in.actions';
 
 const signInStatusStateDefaults: IAuthData = {

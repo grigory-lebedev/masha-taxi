@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { showInOutAnimation } from 'src/app/shared/animations';
-import { INotification } from 'src/app/shared/notification.model';
+import { INotification } from 'src/app/shared/general-components/notification/notification.model';
 import { NotificationListService } from '../notification.service';
 
 @Component({
