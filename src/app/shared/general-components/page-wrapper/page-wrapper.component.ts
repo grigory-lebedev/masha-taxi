@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Select } from '@ngxs/store';
 import { Observable, of } from 'rxjs';
-import { SignInState } from 'src/app/modules/auth/sign-in/ngxs/sign-in.state';
+import { SignInState } from 'src/app/modules/auth/ngxs/sign-in.state';
 
 import { languages } from '../../constants';
 

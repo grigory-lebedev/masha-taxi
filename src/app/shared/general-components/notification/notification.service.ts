@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { INotification } from 'src/app/shared/notification.model';
+import { INotification } from 'src/app/shared/general-components/notification/notification.model';
 import { ENotification } from 'src/app/shared/enums/notification-type';
 
 @Injectable({

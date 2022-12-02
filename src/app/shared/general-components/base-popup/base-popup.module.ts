@@ -1,12 +1,12 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { MaterialModule } from "../../modules/material.module";
+import { SharedModule } from "../../modules/shared.module";
 import { BasePopUpComponent } from "./base-popup.component";
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     MaterialModule
   ],
   declarations: [

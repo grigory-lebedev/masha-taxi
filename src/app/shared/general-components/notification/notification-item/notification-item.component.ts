@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { INotification } from 'src/app/shared/notification.model';
+import { INotification } from 'src/app/shared/general-components/notification/notification.model';
 import { NotificationListService } from '../notification.service';
 
 @Component({
