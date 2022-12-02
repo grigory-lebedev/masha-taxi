@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { IAuthData } from 'src/app/sign-in/auth-data.model';
-import { ENDPOINTS } from '../shared/endpoints';
+import { ENDPOINTS } from 'src/app/shared/endpoints';
+import { IAuthData } from './auth-data.model';
 
 @Injectable({
   providedIn: 'root',

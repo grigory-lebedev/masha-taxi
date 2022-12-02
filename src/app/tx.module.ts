@@ -7,12 +7,12 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
 import { TaxiComponent } from './tx.component';
 import { TxRoutingModule } from './tx-routing.module';
-import { NotificationModule } from './shared/general-components/notification/notification.module';
-import { FeatureModulesModule } from './shared/modules/feautre-modules.module';
+import { FeatureModulesModule } from './shared/modules/feature-modules.module';
+import { PluginsModule } from './shared/modules/plugins.module';
 
 @NgModule({
   declarations: [
-    TaxiComponent
+    TaxiComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { FeatureModulesModule } from './shared/modules/feautre-modules.module';
     HttpClientModule,
     TxRoutingModule,
     FeatureModulesModule,
-    NotificationModule
+    PluginsModule,
   ],
   providers: [
     {
