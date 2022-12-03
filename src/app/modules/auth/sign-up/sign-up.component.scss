@@ -1,0 +1,63 @@
+.sign-up-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+  margin-top: 80px;
+
+  .sign-up-form__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 51px;
+    color: white;
+  }
+
+  .sign-up-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 50px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    
+    .form__field {
+      display: flex;
+      margin-bottom: -22px;
+      gap: 63px;
+
+      .form_common {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 400px;
+      }
+
+      .form_driver-only {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 0;
+        width: 400px;
+
+        .form_driver-only__title {
+          font-size: 36px;
+          padding-left: 50px;
+        }        
+      }
+    }
+
+    .sign-up-form__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  
+      :first-child {
+        width: 400px;
+      }
+    }
+  }
+}
