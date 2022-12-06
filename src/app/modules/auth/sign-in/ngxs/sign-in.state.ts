@@ -4,51 +4,55 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs';
 
 import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
-import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
-import { IAuthData } from '../auth-data.model';
-import { SignInService } from '../auth.service';
+import {
+  HideSpinner,
+  ShowSpinner,
+} from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
+import { ISignInData } from '../../models/sign-in-data.model';
+import { AuthService } from '../../auth.service';
 import { SignIn } from './sign-in.actions';
 
-const signInStatusStateDefaults: IAuthData = {
+const signInStatusStateDefaults: ISignInData = {
   refreshToken: null,
   accessToken: null,
   expirationTime: null,
 };
 
-@State<IAuthData>({
+@State<ISignInData>({
   name: 'signInStatus',
   defaults: signInStatusStateDefaults,
 })
 @Injectable()
 export class SignInState {
   @Selector()
-  static getRefreshToken(state: IAuthData) {
+  static getRefreshToken(state: ISignInData) {
     return state.refreshToken;
   }
 
   @Selector()
-  static getAccessToken(state: IAuthData) {
+  static getAccessToken(state: ISignInData) {
     return state.accessToken;
   }
 
-  static getExpirationTime(state: IAuthData) {
+  @Selector()
+  static getExpirationTime(state: ISignInData) {
     return state.expirationTime;
   }
 
   constructor(
-    private signInService: SignInService,
+    private AuthService: AuthService,
     private notificationService: NotificationListService
   ) {}
 
   @Action(SignIn)
   public signIn(
-    { patchState, dispatch }: StateContext<IAuthData>,
+    { patchState, dispatch }: StateContext<ISignInData>,
     { email, password }: SignIn
   ) {
     dispatch(new ShowSpinner());
-    return this.signInService.signIn(email, password).pipe(
+    return this.AuthService.signIn(email, password).pipe(
       tap({
-        next: (authData: IAuthData) => {
+        next: (authData: ISignInData) => {
           patchState({
             ...authData,
           });

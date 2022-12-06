@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import { Select } from '@ngxs/store';
 import { Observable, of } from 'rxjs';
-import { SignInState } from 'src/app/modules/auth/ngxs/sign-in.state';
+import { SignInState } from 'src/app/modules/auth/sign-in/ngxs/sign-in.state';
+import { SignUpState } from 'src/app/modules/auth/sign-up/ngxs/sign-up.state';
 
 import { languages } from '../../constants';
 
@@ -13,6 +14,6 @@ import { languages } from '../../constants';
 })
 export class PageWrapperComponent {
   @Select(SignInState.getAccessToken) accessToken$!: Observable<string>;
-  public isLoggedIn: boolean = false;
+  @Select(SignUpState.isSignUp) isUserSignedUp$!: Observable<boolean>;
   public languageList = languages;
 }

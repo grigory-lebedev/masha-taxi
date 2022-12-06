@@ -1,13 +1,13 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { MaterialModule } from "../../modules/material.module";
+import { SharedModule } from "../../modules/shared.module";
 import { DropdownMenuModule } from "../dropdown-menu/dropdown-menu.module";
 import { PageWrapperComponent } from "./page-wrapper.component";
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     MaterialModule,
     DropdownMenuModule
   ],
