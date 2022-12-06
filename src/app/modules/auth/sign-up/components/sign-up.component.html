@@ -1,10 +1,12 @@
 <div class="form__wrapper">
   <h1 class="form__title">Sign Up</h1>
   <form class="form" (submit)="onSignUp()" [formGroup]="signUpForm">
+    
     <section class="form__fields">
       <tx-general-form (isCarFormVisible)="setCarFormVisibility($event)"></tx-general-form>
       <tx-car-form *ngIf="isCarFormVisible"></tx-car-form>
     </section>
+
     <section class="form__button">
       <tx-form-button
         type="submit"

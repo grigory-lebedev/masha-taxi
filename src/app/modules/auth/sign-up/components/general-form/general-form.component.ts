@@ -1,10 +1,17 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { regExpressionToCheckEmail, roles } from 'src/app/shared/constants';
 import { ERole } from 'src/app/shared/enums/role';
@@ -15,11 +22,12 @@ import { PasswordMatchValidator } from 'src/app/shared/validators/password-match
   templateUrl: './general-form.component.html',
   styleUrls: ['./general-form.component.scss'],
 })
-export class GeneralFormComponent implements OnInit {
+export class GeneralFormComponent implements OnInit, OnDestroy {
   @Output() isCarFormVisible = new EventEmitter<boolean>();
   public parentForm!: FormGroup;
   public generalForm!: FormGroup;
   public selectRoles = roles;
+  public roleChangesSubscription$!: Subscription;
 
   constructor(private parent: FormGroupDirective) {}
 
@@ -57,10 +65,14 @@ export class GeneralFormComponent implements OnInit {
       PasswordMatchValidator.getPasswordMatchError
     );
 
-    this.generalForm.controls['role'].valueChanges.subscribe((selectedRole) => {
+    this.roleChangesSubscription$ = this.generalForm.controls['role'].valueChanges.subscribe((selectedRole) => {
       selectedRole === ERole.driver
         ? this.isCarFormVisible.emit(true)
         : this.isCarFormVisible.emit(false);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.roleChangesSubscription$.unsubscribe();
   }
 }

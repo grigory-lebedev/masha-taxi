@@ -1,11 +1,11 @@
-<div class="sign-in-form__wrapper">
-  <h1 class="sign-in-form__title">Sign In</h1>
+<div class="form__wrapper">
+  <h1 class="form__title">Sign In</h1>
   <form
-    class="sign-in-form"
+    class="form"
     [formGroup]="signInForm"
     (submit)="onSignIn()"
   >
-    <section class="sign-in-form__input-fields">
+    <section class="form__input-fields">
       <tx-form-input>
         <input
           matInput
@@ -25,21 +25,21 @@
         />
       </tx-form-input>
     </section>
-    <mat-checkbox class="sign-in-form__checkbox" formControlName="isLoggedIn">Keep me logged in</mat-checkbox>
+    <mat-checkbox class="form__checkbox" formControlName="isLoggedIn">Keep me logged in</mat-checkbox>
     <tx-form-button
-      class="sign-in-form__button"
+      class="form__button"
       type="submit"
       text="LOGIN"
       [disabled]="!signInForm.valid"
     ></tx-form-button>
-    <section class="sign-in-form__links">
+    <section class="form__links">
       <a
         routerLink=""
-        class="sign-in-form__link"
+        class="form__link"
         (click)="isForgotPasswordFormVisible = !isForgotPasswordFormVisible"
         >Forgot password?</a
       >
-      <a routerLink="/sign-up" class="sign-in-form__link">I don’t have an account</a>
+      <a routerLink="/sign-up" class="form__link">I don’t have an account</a>
     </section>
   </form>
   <tx-reset-password-form *ngIf="isForgotPasswordFormVisible"></tx-reset-password-form>

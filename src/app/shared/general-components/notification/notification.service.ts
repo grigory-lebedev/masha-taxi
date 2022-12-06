@@ -29,6 +29,7 @@ export class NotificationListService {
       message: incomingMessage,
       type: incomingType,
     };
+    
     if (this.notificationList.length < 4) {
       this.notificationList.push(newNotification);
     } else {

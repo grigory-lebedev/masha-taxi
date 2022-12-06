@@ -8,6 +8,7 @@ export class PasswordMatchValidator {
     if (password !== confirmPassword) {
       control?.get('confirmPassword')?.setErrors({ noPasswordMatch: true });
     }
+    
     return null;
   }
 }

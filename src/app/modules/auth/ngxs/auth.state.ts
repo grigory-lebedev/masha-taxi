@@ -4,10 +4,7 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs';
 
 import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
-import {
-  HideSpinner,
-  ShowSpinner,
-} from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
+import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
 import { ISignInData } from '../models/sign-in-data.model';
 import { AuthService } from '../auth.service';
 import { SignIn, SignUp } from './auth.actions';
@@ -79,8 +76,8 @@ export class AuthState {
     return this.AuthService.signUp(email, password, firstName, lastName, role, car).pipe(
       tap({
         next: () => {
-          this.notificationService.showSuccess('We sent the activation link to email address. Please activate your account.');
           this.ngZone.run(() => this.router.navigate(['/sign-in']));
+          this.notificationService.showSuccess('We sent the activation link to email address. Please activate your account.');
         },
         error: ({ error: { message } }) => {
           this.notificationService.showError(message);

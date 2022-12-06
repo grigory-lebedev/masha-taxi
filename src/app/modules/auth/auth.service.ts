@@ -32,6 +32,7 @@ export class AuthService {
     if (role === ERole.driver) {
       requestBody = { ...requestBody, car };
     }
+    
     return of(null).pipe(delay(2000));
   }
 }
