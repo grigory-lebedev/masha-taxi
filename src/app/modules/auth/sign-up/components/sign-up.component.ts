@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 import { Store } from '@ngxs/store';
 
-import {
-  carColors,
-  regExpressionToCheckEmail,
-  roles,
-} from 'src/app/shared/constants';
-import { ERole } from 'src/app/shared/enums/role';
-import { CarYearValidator } from 'src/app/shared/validators/car-year.validator';
-import { PasswordMatchValidator } from 'src/app/shared/validators/password-match.validator';
+import { carColors, roles } from 'src/app/shared/constants';
 import { SignUp } from '../../ngxs/auth.actions';
 
 @Component({
@@ -31,7 +24,8 @@ export class SignUpComponent {
   }
 
   public onSignUp(): void {
-    const { email, password, firstName, lastName, role } = this.signUpForm.value['generalInfo'];
+    const { email, password, firstName, lastName, role } =
+      this.signUpForm.value['generalInfo'];
     this.store.dispatch(
       new SignUp(
         email,
