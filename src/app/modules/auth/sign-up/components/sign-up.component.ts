@@ -3,7 +3,6 @@ import { FormGroup } from '@angular/forms';
 
 import { Store } from '@ngxs/store';
 
-import { carColors, roles } from 'src/app/shared/constants';
 import { SignUp } from '../../ngxs/auth.actions';
 
 @Component({
@@ -13,8 +12,6 @@ import { SignUp } from '../../ngxs/auth.actions';
 })
 export class SignUpComponent {
   public signUpForm: FormGroup = new FormGroup({});
-  public selectRoles = roles;
-  public selectColors = carColors;
   public isCarFormVisible: boolean = false;
 
   constructor(private store: Store) {}
