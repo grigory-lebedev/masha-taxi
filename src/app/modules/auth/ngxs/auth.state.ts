@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { tap } from 'rxjs';
@@ -43,7 +43,8 @@ export class AuthState {
   constructor(
     private AuthService: AuthService,
     private notificationService: NotificationListService,
-    private router: Router
+    private router: Router,
+    private ngZone: NgZone
   ) {}
 
   @Action(SignIn)
@@ -79,7 +80,7 @@ export class AuthState {
       tap({
         next: () => {
           this.notificationService.showSuccess('We sent the activation link to email address. Please activate your account.');
-          this.router.navigate(['/sign-in']);
+          this.ngZone.run(() => this.router.navigate(['/sign-in']));
         },
         error: ({ error: { message } }) => {
           this.notificationService.showError(message);

@@ -8,8 +8,10 @@ import { ResetPasswordComponent } from './sign-in/components/reset-password/rese
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { FormControlsModule } from 'src/app/shared/form-controls/form-controls.module';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpComponent } from './sign-up/components/sign-up.component';
 import { AuthState } from './ngxs/auth.state';
+import { CarFormComponent } from './sign-up/components/car-form/car-form.component';
+import { GeneralFormComponent } from './sign-up/components/general-form/general-form.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { AuthState } from './ngxs/auth.state';
     RouterModule,
     NgxsModule.forFeature([AuthState]),
   ],
-  declarations: [SignInComponent, ResetPasswordComponent, SignUpComponent],
+  declarations: [SignInComponent, ResetPasswordComponent, SignUpComponent, CarFormComponent, GeneralFormComponent],
   exports: [],
 })
 export class AuthModule {}
