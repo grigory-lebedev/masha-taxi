@@ -25,12 +25,12 @@ export class AuthService {
     lastName: string,
     role: string,
     car?: ICar
-  ): Observable<null> {
+  ): Observable<any> {
     let requestBody: ISignUpData = { email, password, firstName, lastName, role };
 
     if (role === 'driver') {
       requestBody = { ...requestBody, car };
     }
-    return of(null).pipe(delay(2000));
+    return this.http.post<ISignUpData>(ENDPOINTS.register, requestBody);
   }
 }
