@@ -22,7 +22,7 @@ import { setErrorValidationMessage } from '../../validators/error-messages';
 })
 export class FormSelectComponent implements ControlValueAccessor {
   @Input() placeholder: string = ''; 
-  @Input() selectItems: Array<String> = [];
+  @Input() selectItems: Array<string> = [];
   public formControl: FormControl = new FormControl({}, [Validators.required]);
 
   public isDisabled: boolean = false;

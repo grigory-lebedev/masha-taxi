@@ -10,11 +10,14 @@ body {
   height: 100%;
 }
 body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 27px;
+}
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 27px;
 }
 
 input[type="password"] {

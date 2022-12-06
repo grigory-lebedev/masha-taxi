@@ -15,7 +15,6 @@
   }
 
   .sign-in-form {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     padding: 50px;
@@ -25,7 +24,6 @@
     width: 500px;
 
     .sign-in-form__input-fields {
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       gap: 25px;

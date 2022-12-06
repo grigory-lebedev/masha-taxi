@@ -4,9 +4,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
 
 import { carColors, regExpressionToCheckEmail, roles } from 'src/app/shared/constants';
+import { ERole } from 'src/app/shared/enums/role';
 import { CarYearValidator } from 'src/app/shared/validators/car-year.validator';
 import { PasswordMatchValidator } from 'src/app/shared/validators/password-match.validator';
-import { SignUp } from './ngxs/sign-up.actions';
+import { SignUp } from '../ngxs/auth.actions';
 
 @Component({
   selector: 'tx-sign-up',
@@ -33,7 +34,8 @@ export class SignUpComponent {
 
   public showCarForm(): boolean {
     const { role } = this.signUpForm.value;
-    if (role==='driver') {
+
+    if (role === ERole.driver) {
       this.signUpForm.addControl('car', this.carForm);
       return true;
     }
