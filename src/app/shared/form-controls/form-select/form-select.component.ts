@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 import { MAT_SELECT_CONFIG } from '@angular/material/select';
@@ -22,7 +22,7 @@ import { setErrorValidationMessage } from '../../validators/error-messages';
 })
 export class FormSelectComponent implements ControlValueAccessor {
   @Input() placeholder: string = ''; 
-  @Input() selectItems: Array<String> = [];
+  @Input() selectItems: Array<string> = [];
   public formControl: FormControl = new FormControl({}, [Validators.required]);
 
   public isDisabled: boolean = false;

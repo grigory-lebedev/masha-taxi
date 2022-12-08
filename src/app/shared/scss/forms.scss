@@ -1,0 +1,23 @@
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+
+  .form__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 51px;
+    color: white;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+  }
+}
