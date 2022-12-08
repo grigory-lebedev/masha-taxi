@@ -24,6 +24,7 @@ import { PasswordMatchValidator } from 'src/app/shared/validators/password-match
 })
 export class GeneralFormComponent implements OnInit, OnDestroy {
   @Output() isCarFormVisible = new EventEmitter<boolean>();
+
   public parentForm!: FormGroup;
   public generalForm!: FormGroup;
   public selectRoles = roles;
@@ -34,6 +35,7 @@ export class GeneralFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.parentForm = this.parent.form;
     this.initGeneralForm();
+    this.subscribeToRoleChanges();
     this.parentForm.addControl('generalInfo', this.generalForm);
   }
 
@@ -64,7 +66,9 @@ export class GeneralFormComponent implements OnInit, OnDestroy {
       },
       PasswordMatchValidator.getPasswordMatchError
     );
+  }
 
+  private subscribeToRoleChanges(): void {
     this.roleChangesSubscription$ = this.generalForm.controls['role'].valueChanges.subscribe((selectedRole) => {
       selectedRole === ERole.driver
         ? this.isCarFormVisible.emit(true)
