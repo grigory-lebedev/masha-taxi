@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
 
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
-import { SignIn } from '../../ngxs/sign-in.actions';
+import { SignIn } from '../../ngxs/auth.actions';
 
 @Component({
   selector: 'tx-sign-in',

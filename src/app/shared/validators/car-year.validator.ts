@@ -3,6 +3,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 export class CarYearValidator {
   static getCarYearError(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
+
       if (control.value !== null) {
         return isNaN(control.value) ||
           !Number.isInteger(+control.value) ||
@@ -11,6 +12,7 @@ export class CarYearValidator {
           ? { carYearLimit: true }
           : null;
       }
+
       return null;
     };
   }

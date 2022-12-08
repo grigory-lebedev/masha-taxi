@@ -1,0 +1,27 @@
+.form__wrapper {
+  margin-top: 80px;
+
+  .form {
+    padding: 24px 50px;
+
+    .form__fields {
+      display: flex;
+      gap: 63px;
+
+      :nth-child(n) {
+        width: 400px;
+      }
+    }
+  }
+
+  .form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    :first-child {
+      width: 400px;
+    }
+  }
+}

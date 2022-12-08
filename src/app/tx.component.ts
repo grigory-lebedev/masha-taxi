@@ -33,6 +33,7 @@ export class TaxiComponent implements OnInit {
 
   public onSignIn(): void {
     console.log(`Is form valid - ${this.demonstrationForm.valid}`);
+
     if (!this.demonstrationForm.valid) {
       return;
     }

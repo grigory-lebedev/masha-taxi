@@ -1,0 +1,11 @@
+.car-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+
+  .car-form__title {
+    font-size: 36px;
+    padding-left: 50px;
+  }
+}
