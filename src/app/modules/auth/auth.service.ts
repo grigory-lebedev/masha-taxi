@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { delay, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { ENDPOINTS } from 'src/app/shared/endpoints';
 import { ERole } from 'src/app/shared/enums/role';
@@ -32,7 +32,7 @@ export class AuthService {
     if (role === ERole.driver) {
       requestBody = { ...requestBody, car };
     }
-    
-    return of(null).pipe(delay(2000));
+
+    return this.http.post<ISignUpData>(ENDPOINTS.register, requestBody);
   }
 }

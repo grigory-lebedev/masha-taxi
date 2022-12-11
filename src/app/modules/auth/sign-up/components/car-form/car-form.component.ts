@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -14,7 +14,7 @@ import { CarYearValidator } from 'src/app/shared/validators/car-year.validator';
   templateUrl: './car-form.component.html',
   styleUrls: ['./car-form.component.scss'],
 })
-export class CarFormComponent implements OnInit {
+export class CarFormComponent implements OnInit, OnDestroy {
   public parentForm!: FormGroup;
   public carForm!: FormGroup;
   public selectColors = carColors;
@@ -45,5 +45,9 @@ export class CarFormComponent implements OnInit {
       ]),
       color: new FormControl('', Validators.required),
     });
+  }
+
+  ngOnDestroy() {
+    this.parentForm.removeControl('carInfo');
   }
 }
