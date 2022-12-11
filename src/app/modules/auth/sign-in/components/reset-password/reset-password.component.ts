@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
@@ -10,6 +16,8 @@ import { NotificationListService } from 'src/app/shared/general-components/notif
   styleUrls: ['./reset-password.component.scss'],
 })
 export class ResetPasswordComponent implements OnInit, OnDestroy {
+  @Output() isForgotPasswordFormVisible = new EventEmitter<boolean>();
+
   public isEmailSent: boolean = false;
   public resetPasswordForm!: FormGroup;
 
@@ -20,9 +28,12 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   }
 
   public sendLinkToEmail(): void {
-    if (this.resetPasswordForm.valid) {
-      this.isEmailSent = true;
-    }
+    this.makeFormInvisible();
+    this.isEmailSent = true;
+  }
+
+  public makeFormInvisible(): void {
+    this.isForgotPasswordFormVisible.emit(false);
   }
 
   private showSuccessNotification() {

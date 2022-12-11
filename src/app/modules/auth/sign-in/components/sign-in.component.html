@@ -1,10 +1,6 @@
 <div class="form__wrapper">
   <h1 class="form__title">Sign In</h1>
-  <form
-    class="form"
-    [formGroup]="signInForm"
-    (submit)="onSignIn()"
-  >
+  <form class="form" [formGroup]="signInForm" (submit)="onSignIn()">
     <section class="form__input-fields">
       <tx-form-input>
         <input
@@ -25,7 +21,9 @@
         />
       </tx-form-input>
     </section>
-    <mat-checkbox class="form__checkbox" formControlName="isLoggedIn">Keep me logged in</mat-checkbox>
+    <mat-checkbox class="form__checkbox" formControlName="isLoggedIn"
+      >Keep me logged in</mat-checkbox
+    >
     <tx-form-button
       class="form__button"
       type="submit"
@@ -36,11 +34,15 @@
       <a
         routerLink=""
         class="form__link"
-        (click)="isForgotPasswordFormVisible = !isForgotPasswordFormVisible"
+        (click)="isForgotPasswordFormVisible = true"
         >Forgot password?</a
       >
       <a routerLink="/sign-up" class="form__link">I don’t have an account</a>
     </section>
   </form>
-  <tx-reset-password-form *ngIf="isForgotPasswordFormVisible"></tx-reset-password-form>
+  <tx-reset-password-form
+    *ngIf="isForgotPasswordFormVisible"
+    (isForgotPasswordFormVisible)="isForgotPasswordFormVisible = $event"
+    [@resetFormShow]="animationState"
+  ></tx-reset-password-form>
 </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Store } from '@ngxs/store';
+import { resetPasswordFormShowAnimation } from 'src/app/shared/animations';
 
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
 import { SignIn } from '../../ngxs/auth.actions';
@@ -10,10 +11,12 @@ import { SignIn } from '../../ngxs/auth.actions';
   selector: 'tx-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
+  animations: [resetPasswordFormShowAnimation],
 })
 export class SignInComponent {
-  public isForgotPasswordFormVisible: boolean = false; //TODO: temporary
+  public isForgotPasswordFormVisible: boolean = false;
   public signInForm!: FormGroup;
+  public animationState: string = 'finalState';
 
   constructor(private store: Store) {}
 

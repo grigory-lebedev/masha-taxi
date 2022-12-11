@@ -51,20 +51,16 @@ export const showInOutAnimation = trigger('showInOut', [
   ]),
 ]);
 
-export const popupShowAnimation = trigger('popupShow', [
+export const resetPasswordFormShowAnimation = trigger('resetFormShow', [
   transition('void => *', [
     style({
-      transition: 'opacity 500ms',
-      visibility: 'hidden',
       opacity: '0',
     }),
-    animate('300ms'),
+    animate('500ms'),
   ]),
   transition('* => void', [
-    animate('200ms',
+    animate('300ms',
       style({
-        transition: 'opacity 500ms',
-        visibility: 'hidden',
         opacity: '0',
       })
     ),
