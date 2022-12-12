@@ -1,27 +1,27 @@
 import {
   Component,
   EventEmitter,
-  OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngxs/store';
 
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
-import { NotificationListService } from 'src/app/shared/general-components/notification/notification.service';
+import { ResetPassword } from '../../../ngxs/auth.actions';
 
 @Component({
   selector: 'tx-reset-password-form',
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.scss'],
 })
-export class ResetPasswordComponent implements OnInit, OnDestroy {
+export class ResetPasswordComponent implements OnInit {
   @Output() isForgotPasswordFormVisible = new EventEmitter<boolean>();
 
   public isEmailSent: boolean = false;
   public resetPasswordForm!: FormGroup;
 
-  constructor(private notificationListService: NotificationListService) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -29,17 +29,12 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
   public sendLinkToEmail(): void {
     this.makeFormInvisible();
-    this.isEmailSent = true;
+    const { email } = this.resetPasswordForm.value;
+    this.store.dispatch(new ResetPassword(email));
   }
 
   public makeFormInvisible(): void {
     this.isForgotPasswordFormVisible.emit(false);
-  }
-
-  private showSuccessNotification() {
-    this.notificationListService.showSuccess(
-      'We sent the link for reset password on your email address.'
-    );
   }
 
   private initForm(): void {
@@ -49,11 +44,5 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         Validators.pattern(regExpressionToCheckEmail),
       ]),
     });
-  }
-
-  ngOnDestroy(): void {
-    if (this.isEmailSent) {
-      this.showSuccessNotification();
-    }
   }
 }

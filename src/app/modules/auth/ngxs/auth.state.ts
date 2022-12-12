@@ -7,7 +7,7 @@ import { NotificationListService } from 'src/app/shared/general-components/notif
 import { HideSpinner, ShowSpinner } from 'src/app/shared/general-components/spinner/ngxs/spinner.actions';
 import { ISignInData } from '../models/sign-in-data.model';
 import { AuthService } from '../auth.service';
-import { SignIn, SignUp } from './auth.actions';
+import { ResetPassword, SignIn, SignUp } from './auth.actions';
 import { Router } from '@angular/router';
 
 const signInStatusStateDefaults: ISignInData = {
@@ -36,6 +36,8 @@ export class AuthState {
   static getExpirationTime(state: ISignInData) {
     return state.expirationTime;
   }
+
+  public displayedMessage = `Something went wrong😞`;
 
   constructor(
     private AuthService: AuthService,
@@ -77,10 +79,34 @@ export class AuthState {
       tap({
         next: () => {
           this.ngZone.run(() => this.router.navigate(['/sign-in']));
-          this.notificationService.showSuccess('We sent the activation link to email address. Please activate your account.');
+          this.notificationService.showSuccess(`We sent the activation link to email address. Please activate your account.`);
         },
         error: ({ error: { message } }) => {
           this.notificationService.showError(message);
+        },
+        finalize: () => dispatch(new HideSpinner()),
+      })
+    );
+  }
+
+  @Action(ResetPassword)
+  public resetPassword(
+    { dispatch }: StateContext<ISignInData>,
+    { email }: SignUp
+  ) {
+    dispatch(new ShowSpinner());
+
+    return this.AuthService.resetPassword(email).pipe(
+      tap({
+        next: () => {
+          this.notificationService.showSuccess(`We sent the link for reset password on your email address.`);
+        },
+        error: ({ error: { message } }) => {
+          if (message) {
+            this.displayedMessage = message;
+          }
+
+          this.notificationService.showError(this.displayedMessage);
         },
         finalize: () => dispatch(new HideSpinner()),
       })

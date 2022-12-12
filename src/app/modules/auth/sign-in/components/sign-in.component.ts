@@ -16,7 +16,6 @@ import { SignIn } from '../../ngxs/auth.actions';
 export class SignInComponent {
   public isForgotPasswordFormVisible: boolean = false;
   public signInForm!: FormGroup;
-  public animationState: string = 'finalState';
 
   constructor(private store: Store) {}
 
@@ -27,6 +26,14 @@ export class SignInComponent {
   public onSignIn(): void {
     const { email, password } = this.signInForm.value;
     this.store.dispatch(new SignIn(email, password));
+  }
+
+  public makeResetPasswordFormVisible(): void {
+    this.isForgotPasswordFormVisible = true;
+  }
+
+  public setResetPasswordFormDisplay(isFormVisible: boolean): void {
+    this.isForgotPasswordFormVisible = isFormVisible;
   }
 
   private initForm(): void {
