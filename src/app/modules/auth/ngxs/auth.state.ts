@@ -9,6 +9,7 @@ import { ISignInData } from '../models/sign-in-data.model';
 import { AuthService } from '../auth.service';
 import { ResetPassword, SignIn, SignUp } from './auth.actions';
 import { Router } from '@angular/router';
+import { ShowErrorNotification, ShowSuccessNotification } from 'src/app/shared/general-components/notification/ngxs/notification.actions';
 
 const signInStatusStateDefaults: ISignInData = {
   refreshToken: null,
@@ -61,7 +62,7 @@ export class AuthState {
           });
         },
         error: ({ error: { message } }) => {
-          this.notificationService.showError(message);
+          dispatch(new ShowErrorNotification(message));
         },
         finalize: () => dispatch(new HideSpinner()),
       })
@@ -79,10 +80,10 @@ export class AuthState {
       tap({
         next: () => {
           this.ngZone.run(() => this.router.navigate(['/sign-in']));
-          this.notificationService.showSuccess(`We sent the activation link to email address. Please activate your account.`);
+          dispatch(new ShowSuccessNotification(`We sent the activation link to email address. Please activate your account.`));
         },
         error: ({ error: { message } }) => {
-          this.notificationService.showError(message);
+          dispatch(new ShowErrorNotification(message));
         },
         finalize: () => dispatch(new HideSpinner()),
       })
@@ -105,8 +106,8 @@ export class AuthState {
           if (message) {
             this.displayedMessage = message;
           }
-
-          this.notificationService.showError(this.displayedMessage);
+          
+          dispatch(new ShowErrorNotification(this.displayedMessage));
         },
         finalize: () => dispatch(new HideSpinner()),
       })
