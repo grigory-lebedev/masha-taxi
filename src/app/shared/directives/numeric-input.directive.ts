@@ -7,7 +7,7 @@ import { regExpressionToCheckNumericInput } from 'src/app/shared/constants';
 })
 export class NumericInputDirective {
   @HostListener('keypress', ['$event']) 
-  keyPress(event: KeyboardEvent) {
+  handleKeyPress(event: KeyboardEvent) {
     if(event.key.match(regExpressionToCheckNumericInput)) {
       event.preventDefault();
     }

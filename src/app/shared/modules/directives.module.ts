@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { NumericInputDirective } from 'src/app/modules/auth/sign-up/components/car-form/numeric-input.directive';
+import { NumericInputDirective } from '../directives/numeric-input.directive';
 
 @NgModule({
-  declarations: [NumericInputDirective]
+  declarations: [NumericInputDirective],
+  exports: [NumericInputDirective],
 })
 export class DirectivesModule {}
