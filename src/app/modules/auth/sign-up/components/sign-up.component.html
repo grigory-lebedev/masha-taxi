@@ -3,7 +3,7 @@
   <form class="form" (submit)="onSignUp()" [formGroup]="signUpForm">
     
     <section class="form__fields">
-      <tx-general-form (isCarFormVisible)="setCarFormVisibility($event)"></tx-general-form>
+      <tx-general-form (carFormShowed)="setCarFormVisibility($event)"></tx-general-form>
       <tx-car-form *ngIf="isCarFormVisible"></tx-car-form>
     </section>
 
@@ -11,7 +11,7 @@
       <tx-form-button
         type="submit"
         text="REGISTER"
-        [disabled]="!signUpForm.valid"
+        [disabled]="signUpForm.invalid"
       ></tx-form-button>
     </section>
   </form>

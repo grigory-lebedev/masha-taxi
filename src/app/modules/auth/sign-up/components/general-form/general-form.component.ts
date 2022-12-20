@@ -23,7 +23,7 @@ import { PasswordMatchValidator } from 'src/app/shared/validators/password-match
   styleUrls: ['./general-form.component.scss'],
 })
 export class GeneralFormComponent implements OnInit, OnDestroy {
-  @Output() isCarFormVisible = new EventEmitter<boolean>();
+  @Output() carFormShowed = new EventEmitter<boolean>();
 
   public parentForm!: FormGroup;
   public generalForm!: FormGroup;
@@ -71,8 +71,8 @@ export class GeneralFormComponent implements OnInit, OnDestroy {
   private subscribeToRoleChanges(): void {
     this.roleChangesSubscription$ = this.generalForm.controls['role'].valueChanges.subscribe((selectedRole) => {
       selectedRole === ERole.driver
-        ? this.isCarFormVisible.emit(true)
-        : this.isCarFormVisible.emit(false);
+        ? this.carFormShowed.emit(true)
+        : this.carFormShowed.emit(false);
     });
   }
 

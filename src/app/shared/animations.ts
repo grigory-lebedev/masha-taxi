@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
-export const showInOutAnimation = trigger('showInOut', [
+export const showInOut = trigger('showInOut', [
   state(
     'finalState',
     style({
@@ -51,7 +51,7 @@ export const showInOutAnimation = trigger('showInOut', [
   ]),
 ]);
 
-export const resetPasswordFormShowAnimation = trigger('resetFormShow', [
+export const showUpOnTheSpot = trigger('showUpOnTheSpot', [
   transition('void => *', [
     style({
       opacity: '0',
