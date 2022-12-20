@@ -1,11 +1,13 @@
 import {
   Component,
   EventEmitter,
+  OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
+import { Subscription } from 'rxjs';
 
 import { regExpressionToCheckEmail } from 'src/app/shared/constants';
 import { ResetPassword } from '../../../ngxs/auth.actions';
@@ -15,10 +17,11 @@ import { ResetPassword } from '../../../ngxs/auth.actions';
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.scss'],
 })
-export class ResetPasswordComponent implements OnInit {
+export class ResetPasswordComponent implements OnInit, OnDestroy {
   @Output() closed = new EventEmitter<void>();
 
   public resetPasswordForm!: FormGroup;
+  public resetPasswordSubscription$!: Subscription;
 
   constructor(private store: Store) {}
 
@@ -28,10 +31,10 @@ export class ResetPasswordComponent implements OnInit {
 
   public sendLinkToEmail(): void {
     const { email } = this.resetPasswordForm.value;
-    this.store.dispatch(new ResetPassword(email))
-    .subscribe(() => {
-      this.closed.emit();
-    })
+    this.resetPasswordSubscription$ = this.store.dispatch(new ResetPassword(email))
+      .subscribe(() => {
+        this.closed.emit();
+      });
   }
 
   private initForm(): void {
@@ -41,5 +44,9 @@ export class ResetPasswordComponent implements OnInit {
         Validators.pattern(regExpressionToCheckEmail),
       ]),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.resetPasswordSubscription$.unsubscribe();
   }
 }
