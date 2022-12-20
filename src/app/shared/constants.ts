@@ -20,4 +20,4 @@ export const languages = [
 ];
 
 export const regExpressionToCheckEmail: string = `^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`;
-export const regExpressionToCheckNumericInput: RegExp = /[^0-9]*/g;
+export const regExpressionToCheckNumericInput: RegExp = /[^\d]/g;
