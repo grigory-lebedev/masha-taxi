@@ -12,6 +12,7 @@ import { SignUpComponent } from './sign-up/components/sign-up.component';
 import { AuthState } from './ngxs/auth.state';
 import { CarFormComponent } from './sign-up/components/car-form/car-form.component';
 import { GeneralFormComponent } from './sign-up/components/general-form/general-form.component';
+import { DirectivesModule } from 'src/app/shared/modules/directives.module';
 
 @NgModule({
   imports: [
@@ -19,9 +20,16 @@ import { GeneralFormComponent } from './sign-up/components/general-form/general-
     MaterialModule,
     FormControlsModule,
     RouterModule,
+    DirectivesModule,
     NgxsModule.forFeature([AuthState]),
   ],
-  declarations: [SignInComponent, ResetPasswordComponent, SignUpComponent, CarFormComponent, GeneralFormComponent],
+  declarations: [
+    SignInComponent,
+    ResetPasswordComponent,
+    SignUpComponent,
+    CarFormComponent,
+    GeneralFormComponent
+  ],
   exports: [],
 })
 export class AuthModule {}
