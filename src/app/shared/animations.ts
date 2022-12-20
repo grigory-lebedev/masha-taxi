@@ -1,6 +1,6 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
-export const showInOutAnimation = trigger('showInOut', [
+export const showInOut = trigger('showInOut', [
   state(
     'finalState',
     style({
@@ -51,20 +51,16 @@ export const showInOutAnimation = trigger('showInOut', [
   ]),
 ]);
 
-export const popupShowAnimation = trigger('popupShow', [
+export const showUpOnTheSpot = trigger('showUpOnTheSpot', [
   transition('void => *', [
     style({
-      transition: 'opacity 500ms',
-      visibility: 'hidden',
       opacity: '0',
     }),
-    animate('300ms'),
+    animate('500ms'),
   ]),
   transition('* => void', [
-    animate('200ms',
+    animate('300ms',
       style({
-        transition: 'opacity 500ms',
-        visibility: 'hidden',
         opacity: '0',
       })
     ),

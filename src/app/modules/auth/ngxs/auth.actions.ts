@@ -16,3 +16,8 @@ export class SignIn {
   static readonly type = '[Sign-in] Sign In Request';
   constructor(public email: string, public password: string) {}
 }
+
+export class ResetPassword {
+  static readonly type = '[ResetPassword] Reset Password Request';
+  constructor(public email: string) {}
+}

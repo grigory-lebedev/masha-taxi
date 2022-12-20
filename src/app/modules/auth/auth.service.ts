@@ -27,12 +27,22 @@ export class AuthService {
     role: string,
     car?: ICar
   ): Observable<any> {
-    let requestBody: ISignUpData = { email, password, firstName, lastName, role };
+    let requestBody: ISignUpData = {
+      email,
+      password,
+      firstName,
+      lastName,
+      role,
+    };
 
     if (role === ERole.driver) {
       requestBody = { ...requestBody, car };
     }
 
-    return this.http.post<ISignUpData>(ENDPOINTS.register, requestBody);
+    return this.http.post(ENDPOINTS.register, requestBody);
+  }
+
+  public resetPassword(email: string): Observable<any> {
+    return this.http.post(ENDPOINTS.resetPassword, { email });
   }
 }
