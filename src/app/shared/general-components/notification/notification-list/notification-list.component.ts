@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { showInOutAnimation } from 'src/app/shared/animations';
+import { showInOut } from 'src/app/shared/animations';
 import { INotification } from 'src/app/shared/general-components/notification/notification.model';
 import { NotificationListService } from '../notification.service';
 
@@ -8,7 +8,7 @@ import { NotificationListService } from '../notification.service';
   selector: 'tx-notification-list',
   templateUrl: './notification-list.component.html',
   styleUrls: ['./notification-list.component.scss'],
-  animations: [showInOutAnimation],
+  animations: [showInOut],
 })
 export class NotificationListComponent implements OnInit {
   public notificationList: INotification[] = [];

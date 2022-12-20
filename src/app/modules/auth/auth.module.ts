@@ -12,7 +12,7 @@ import { SignUpComponent } from './sign-up/components/sign-up.component';
 import { AuthState } from './ngxs/auth.state';
 import { CarFormComponent } from './sign-up/components/car-form/car-form.component';
 import { GeneralFormComponent } from './sign-up/components/general-form/general-form.component';
-import { NumericInputDirective } from './sign-up/components/car-form/numeric-input.directive';
+import { DirectivesModule } from 'src/app/shared/modules/directives.module';
 
 @NgModule({
   imports: [
@@ -20,6 +20,7 @@ import { NumericInputDirective } from './sign-up/components/car-form/numeric-inp
     MaterialModule,
     FormControlsModule,
     RouterModule,
+    DirectivesModule,
     NgxsModule.forFeature([AuthState]),
   ],
   declarations: [
@@ -27,8 +28,7 @@ import { NumericInputDirective } from './sign-up/components/car-form/numeric-inp
     ResetPasswordComponent,
     SignUpComponent,
     CarFormComponent,
-    GeneralFormComponent,
-    NumericInputDirective,
+    GeneralFormComponent
   ],
   exports: [],
 })
