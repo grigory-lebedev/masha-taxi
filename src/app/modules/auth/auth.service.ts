@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable, of, delay } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { ENDPOINTS } from 'src/app/shared/endpoints';
 import { ERole } from 'src/app/shared/enums/role';
@@ -39,10 +39,10 @@ export class AuthService {
       requestBody = { ...requestBody, car };
     }
 
-    return this.http.post<ISignUpData>(ENDPOINTS.register, requestBody);
+    return this.http.post(ENDPOINTS.register, requestBody);
   }
 
   public resetPassword(email: string): Observable<any> {
-    return of(null).pipe(delay(2000));
+    return this.http.post(ENDPOINTS.resetPassword, { email });
   }
 }
