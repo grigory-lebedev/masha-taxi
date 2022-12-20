@@ -28,20 +28,21 @@
       class="form__button"
       type="submit"
       text="LOGIN"
-      [disabled]="!signInForm.valid"
+      [disabled]="signInForm.invalid"
     ></tx-form-button>
     <section class="form__links">
       <a
         routerLink=""
         class="form__link"
-        (click)="makeResetPasswordFormVisible()"
+        (click)="setResetPasswordFormDisplay(true)"
         >Forgot password?</a
       >
       <a routerLink="/sign-up" class="form__link">I don’t have an account</a>
     </section>
   </form>
   <tx-reset-password-form
+    @showUpOnTheSpot
     *ngIf="isForgotPasswordFormVisible"
-    (isForgotPasswordFormVisible)="setResetPasswordFormDisplay($event)"
+    (closed)="setResetPasswordFormDisplay(false)"
   ></tx-reset-password-form>
 </div>

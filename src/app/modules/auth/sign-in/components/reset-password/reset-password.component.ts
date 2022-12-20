@@ -16,9 +16,8 @@ import { ResetPassword } from '../../../ngxs/auth.actions';
   styleUrls: ['./reset-password.component.scss'],
 })
 export class ResetPasswordComponent implements OnInit {
-  @Output() isForgotPasswordFormVisible = new EventEmitter<boolean>();
+  @Output() closed = new EventEmitter<void>();
 
-  public isEmailSent: boolean = false;
   public resetPasswordForm!: FormGroup;
 
   constructor(private store: Store) {}
@@ -28,13 +27,11 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   public sendLinkToEmail(): void {
-    this.makeFormInvisible();
     const { email } = this.resetPasswordForm.value;
-    this.store.dispatch(new ResetPassword(email));
-  }
-
-  public makeFormInvisible(): void {
-    this.isForgotPasswordFormVisible.emit(false);
+    this.store.dispatch(new ResetPassword(email))
+    .subscribe(() => {
+      this.closed.emit();
+    })
   }
 
   private initForm(): void {
