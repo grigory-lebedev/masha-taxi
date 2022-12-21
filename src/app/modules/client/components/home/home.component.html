@@ -1,0 +1,29 @@
+<section class="home__wrapper">
+  <section class="home__title">
+    <p>The best taxi<br />in the world</p>
+    <p>Welcome<br />{{ currentUser.firstName }} {{ currentUser.lastName }}</p>
+  </section>
+  <div class="home__line-divider"></div>
+  <p class="home__text">
+    We will help you quickly and comfortably move<br />anywhere in the world
+  </p>
+  <ul class="home__characteristics-list">
+    <li>QUICK</li>
+    <li>COMFORT</li>
+    <li>24/7 SUPPORTS</li>
+  </ul>
+  <section class="home__buttons">
+    <tx-button
+      text="Create order"
+      color="primary"
+      size="large"
+      [disabled]="false"
+    ></tx-button>
+    <tx-button
+      text="View history"
+      color="primary"
+      size="large"
+      [disabled]="false"
+    ></tx-button>
+  </section>
+</section>

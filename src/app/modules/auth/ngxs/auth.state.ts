@@ -60,6 +60,8 @@ export class AuthState {
           patchState({
             ...authData,
           });
+          //TODO: temporary to show client home screen
+          this.ngZone.run(() => this.router.navigate(['/client-home']));
         },
         error: ({ error: { message } }) => {
           dispatch(new ShowErrorNotification(message));
