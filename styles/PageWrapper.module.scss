@@ -1,0 +1,54 @@
+.page-wrapper {
+    background: linear-gradient(
+        89.85deg,
+        #000000 -4.81%,
+        rgba(84, 55, 55, 0) 102.4%
+      ),
+      url(./../assets/picture.jfif) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+  
+    .page-wrapper__header {
+      font-family: "Rasa";
+      font-size: 28px;
+  
+      .page-wrapper__functionality-block {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: #fefefe;
+        gap: 58px;
+        padding: 12px 50px;
+        background-color: #3c3234e5;
+  
+        .languages-list {
+          display: flex;
+          align-items: center;
+        }
+  
+        .page-wrapper__sign-in-link {
+          text-decoration: none;
+          color: #fefefe;
+        }
+      }
+      .page-wrapper__title {
+        background: #241d1e;
+        opacity: 0.9;
+        font-family: "Rubik", sans-serif;
+        font-size: 90px;
+        line-height: 107px;
+        color: #C4A267;
+        padding-left: 170px;
+      }
+    }
+  
+    .page-wrapper__functionality-block.functionality-block_logged-out {
+      background-color: transparent !important;
+      padding-right: 174px !important;
+    }
+  
+    .page-wrapper__content {
+      display: flex;
+      justify-content: center;
+    }
+  }
