@@ -1,4 +1,4 @@
-function Tx() {
+const Tx = () => {
   return (
     <div className="Tx">
       Taxi React App
