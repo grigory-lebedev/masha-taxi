@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
-import styles from "../../../styles/PageWrapper.module.scss";
+
+import styles from "../PageWrapper.module.scss";
 
 type pageWrapperProps = {
     children: ReactNode;
