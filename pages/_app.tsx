@@ -1,11 +1,16 @@
-import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import PageWrapper from "../components/generalComponents/PageWrapper/PageWrapper";
+import { ThemeProvider } from "@emotion/react";
+
+import PageWrapper from "../shared/components/generalComponents/PageWrapper/PageWrapper";
+import theme from "../src/theme";
+import "../styles/globals.scss";
 
 const App = ({ Component, pageProps }: AppProps) => (
-    <PageWrapper>
-        <Component {...pageProps} />
-    </PageWrapper>
+    <ThemeProvider theme={theme}>
+        <PageWrapper>
+            <Component {...pageProps} />
+        </PageWrapper>
+    </ThemeProvider>
 );
 
 export default App;

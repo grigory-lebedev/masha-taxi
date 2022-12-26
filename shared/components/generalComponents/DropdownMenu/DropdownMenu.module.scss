@@ -1,0 +1,35 @@
+.menu__button {
+    color: white;
+    transform: rotate(0deg);
+}
+
+.menu__button_open {
+    color: white;
+    transform: rotate(180deg);
+}
+
+.menu_open__wrapper {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    top: 20px !important;
+    left: -20px !important;
+
+    .menu_open {
+        background-color: #3e3436;
+        border-radius: 12px;
+        color: white;
+
+        .menu_open__item {
+            font-family: "Rasa";
+            font-size: 28px;
+            border-bottom: 1px solid black;
+            height: 39px;
+        }
+
+        :last-child {
+            border-bottom: none;
+        }
+    }
+}

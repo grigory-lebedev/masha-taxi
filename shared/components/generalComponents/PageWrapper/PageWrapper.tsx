@@ -1,10 +1,13 @@
 import { FC, ReactNode } from "react";
 
-import styles from "../PageWrapper.module.scss";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
+import styles from "./PageWrapper.module.scss";
 
 type pageWrapperProps = {
     children: ReactNode;
 };
+
+const languages: string[] = ["English", "Russian", "German"];
 
 const PageWrapper: FC<pageWrapperProps> = ({ children }) => {
     let isLoggedIn: boolean = true;
@@ -21,10 +24,7 @@ const PageWrapper: FC<pageWrapperProps> = ({ children }) => {
                             : null
                     }`}
                 >
-                    {/* TODO: temporary until we do not have dropdown menu component */}
-                    <div className="page-wrapper__languages-list languages-list">
-                        <span>English ↓</span>
-                    </div>
+                    <DropdownMenu options={languages}></DropdownMenu>
                     {isLoggedIn ? (
                         <a
                             className={styles["page-wrapper__sign-in-link"]}
